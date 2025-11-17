@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <title th:text="${portfolio}"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/styles/style3.css}" />
+</head>
+<body>
+    <!-- НАЧАЛО БЛОКА ШАПКИ -->
+    <header class="site-header">
+        <div class="logo">            
+            <a href="/"><img th:src="@{images/photo1.png}" alt="МХС - Механизированные системы" /></a>
+        </div>
+         <!-- Кнопка-гамбургер (добавляем) -->
+        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Открыть меню">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="main-nav" id="mainMenu">
+            <ul>
+                <li><a href="/index">Главная</a></li>
+                <li><a href="/services">Услуги</a></li>
+                <li><a href="/contact">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- КОНЕЦ БЛОКА ШАПКИ -->
+
+    <main>
+        
+        <!-- СЕКЦИЯ ПОРТФОЛИО -->
+         <section id="portfolio" class="section-padded">
+            <h1>Наши проекты</h1>
+
+        <p>Мы гордимся тем, что реализуем проекты, которые помогают нашим клиентам достигать успеха. Вот некоторые из них:</p>
+
+        <article>
+            <h2>1. Проект автоматизации сборочной линии для завода "Электроника"</h2>
+            <ul>
+                <li><strong>Описание</strong>: Мы разработали и внедрили систему автоматизации, что позволило повысить производительность на 30%.</li>
+                <li><strong>Задачи</strong>:
+                    <ul>
+                        <li>Анализ текущего процесса.</li>
+                        <li>Разработка индивидуального решения.</li>
+                        <li>Установка и настройка оборудования.</li>
+                    </ul>
+                </li>
+                <li><strong>Результаты</strong>: Увеличение скорости сборки и сокращение затрат на labor.</li>
+            </ul>
+            <figure>
+                <img src="https://example.com/image1.jpg" alt="Проект автоматизации сборочной линии">
+                <figcaption>Изображение: Проект автоматизации сборочной линии</figcaption>
+            </figure>
+        </article>
+
+        <hr>
+
+        <article>
+            <h2>2. Обновление механизированной системы для фабрики "Текстиль"</h2>
+            <ul>
+                <li><strong>Описание</strong>: Проведение комплексного обновления старого оборудования и внедрение новых технологий.</li>
+                <li><strong>Задачи</strong>:
+                    <ul>
+                        <li>Полный аудит системы.</li>
+                        <li>Замена устаревшего оборудования.</li>
+                        <li>Обучение персонала.</li>
+                    </ul>
+                </li>
+                <li><strong>Результаты</strong>: Снижение числа ошибок в производственном процессе на 25%.</li>
+            </ul>
+            <figure>
+                <img src="https://example.com/image2.jpg" alt="Обновление механизированной системы">
+                <figcaption>Изображение: Обновление механизированной системы</figcaption>
+            </figure>
+        </article>
+
+        <hr>
+
+        <article>
+            <h2>3. Внедрение системы управления для склада "Логистика"</h2>
+            <ul>
+                <li><strong>Описание</strong>: Разработка и установка системы управления, которая улучшила учет и управление запасами.</li>
+                <li><strong>Задачи</strong>:
+                    <ul>
+                        <li>Анализ текущих процессов управления складом.</li>
+                        <li>Проектирование системы управления и учета.</li>
+                        <li>Интеграция с существующими системами.</li>
+                    </ul>
+                </li>
+                <li><strong>Результаты</strong>: Увеличение точности учёта на 40% и снижение времени обработки заказов на 20%.</li>
+            </ul>
+            <figure>
+                <img src="https://example.com/image3.jpg" alt="Система управления для склада">
+                <figcaption>Изображение: Система управления для склада</figcaption>
+            </figure>
+        </article>
+            
+         </section>
+
+    </main>
+
+    <footer>
+        <!-- Подвал сайта -->
+        <p>&copy; 2025 Все права защищены.</p>
+    </footer>
+<script th:src="@{/scripts/main.js}"></script>
+</body>
+</html>
