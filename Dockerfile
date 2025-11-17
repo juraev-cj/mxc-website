@@ -1,10 +1,6 @@
-FROM  maven:3.8.6-openjdk-17 AS build
+FROM  openjdk:17
 WORKDIR /app
 COPY . .
-RUN ./mvnw clean package -DskipTests
-
-FROM  openjdk:17-jdk-slim
-WORKDIR /app
-COPY --from=build /app/target/*.jar app.jar
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 EXPOSE 8080
-ENTRYPOINT [ "java", "-jar", "app.jar" ]
+CMD [ "java", "-jar", "target/*.jar" ]
