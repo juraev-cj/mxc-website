@@ -1,4 +1,5 @@
-FROM openjdk:17-jdk-slim
+FROM ubuntu:jammy
+RUN apt-get update && apt-get install -y openjdk-17-jdk
 WORKDIR /app
 COPY . .
 RUN chmod +x mvnw && ./mvnw clean package -DskipTests
