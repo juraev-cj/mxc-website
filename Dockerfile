@@ -18,4 +18,4 @@ EXPOSE 8080
 ENV JAR_FILE=target/mxc-0.0.1-SNAPSHOT.jar
 
 # Команда запуска приложения после сборки
-CMD ["java", "-jar", "target/*.jar"]
+CMD sh -c "java -jar target/*.jar"
