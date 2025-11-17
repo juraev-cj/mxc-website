@@ -14,5 +14,8 @@ RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 # Указываем порт, который слушает ваше приложение Spring Boot (обычно 8080)
 EXPOSE 8080
 
+# Указываем точное имя JAR-файла (проверьте ваш pom.xml на artifactId и версию)
+ENV JAR_FILE=target/mxc-0.0.1-SNAPSHOT.jar
+
 # Команда запуска приложения после сборки
 CMD ["java", "-jar", "target/*.jar"]
