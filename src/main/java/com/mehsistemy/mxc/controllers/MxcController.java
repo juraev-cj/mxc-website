@@ -40,4 +40,10 @@ public class MxcController {
         model.addAttribute("thanks", "МХС - Спасибо");
         return "thanks";
     }
+
+    // Этот метод перехватывает прямые запросы на /services, /portfolio и т.д. И возвращает базовый index.html, а JS уже загрузит нужный фрагмент.
+    @GetMapping({"/services", "/portfolio", "/contact"})
+    public String forwardRoutes() {
+        return "index";
+    }
 }
