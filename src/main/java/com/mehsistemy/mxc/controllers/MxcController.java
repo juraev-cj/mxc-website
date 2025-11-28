@@ -13,28 +13,26 @@ public class MxcController {
         return "index";
     }
 
-    @GetMapping("/index")
-    public String home(Model model) {
-        model.addAttribute("index", "МХС - Главная");
-        return "index";
+    // --- Новые API для загрузки контента через AJAX ---
+
+    @GetMapping("/api/home-content")
+    public String getHomeContent() {
+        return "fragments/home :: content"; // Использует Thymeleaf Fragment для главной страницы
     }
 
-    @GetMapping("/services")
-    public String services(Model model) {
-        model.addAttribute("services", "МХС - Услуги");
-        return "services";
+    @GetMapping("/api/services-content")
+    public String getServicesContent() {
+        return "fragments/services :: content"; // Использует Thymeleaf Fragment для услуг
     }
 
-    @GetMapping("/portfolio")
-    public String portfolio(Model model) {
-        model.addAttribute("portfolio", "МХС - Портфолио");
-        return "portfolio";
+    @GetMapping("/api/portfolio-content")
+    public String getPortfolioContent() {
+        return "fragments/portfolio :: content"; // Использует Thymeleaf Fragment для услуг
     }
 
-    @GetMapping("/contact")
-    public String contact(Model model) {
-        model.addAttribute("contact", "МХС - Контакты");
-        return "contact";
+    @GetMapping("/api/contact-content")
+    public String getContactContent() {
+        return "fragments/contact :: content"; // Использует Thymeleaf Fragment для услуг
     }
 
     @GetMapping("/thanks")
