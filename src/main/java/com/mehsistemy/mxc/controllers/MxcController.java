@@ -9,7 +9,7 @@ public class MxcController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("index", "МХС");
+        model.addAttribute("index", "mxc21");
         return "index";
     }
 
