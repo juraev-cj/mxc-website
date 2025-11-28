@@ -1,65 +1,80 @@
-        <!-- СЕКЦИЯ КОНТАКТЫ -->
-        <section id="contact" class="section-padded">
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/styles/style4.css}" />
+    </head>
+        <body>
+            <!-- src/main/resources/templates/fragments/contact.html -->
 
-        <section>
-            <h2>Наши контактные данные</h2>
-            <p>Мы рады возможности пообщаться и ответить на все ваши вопросы. Свяжитесь с нами любым удобным способом!</p>
-            <!-- Используем тег <address> для семантического выделения контактной информации -->
-            <address>
-                <ul>
-                    <li><strong>Телефон</strong>: +7 (937) 947-77-57</li>
-                    <li><strong>Email</strong>: mxcstal.21@mail.ru</li>
-                    <li><strong>Адрес</strong>: г. Новочебоксарск, ул. Промышленная, 36</li>
-                    <li><strong>Местоположение:</strong> <a href="https://yandex.ru/maps/37133/novocheboksarsk/house/promyshlennaya_ulitsa_36/YE4YcwVgTUMCQFtsfX1zcnlnZw==/?ll=47.520433%2C56.123385&z=16.95">Яндекс.Карты</a></li>
-                </ul>
-            </address>
-        </section>
+            <!-- ГЛАВНЫЙ ФРАГМЕНТ, который будет загружаться в <main id="app-content"> -->
+            <section id="contact" class="section-padded" th:fragment="content">
 
-        <section>
-            <h2>Время работы</h2>
-            <!-- Можно использовать таблицу <table> для структурированных данных (опционально) -->
-            <table>
-                <thead>
-                    <tr>
-                        <th>День недели</th>
-                        <th>Часы работы</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Понедельник-Пятница</td>
-                        <td>08:00 - 17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Суббота</td>
-                        <td>08:00 - 17:00</td>
-                    </tr>
-                    <tr>
-                        <td>Воскресенье</td>
-                        <td>08:00 - 17:00</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+                <section>
+                    <h2>Наши контактные данные</h2>
+                    <p>Мы рады возможности пообщаться и ответить на все ваши вопросы. Свяжитесь с нами любым удобным способом!</p>
+                    <!-- Используем тег <address> для семантического выделения контактной информации -->
+                    <address>
+                        <ul>
+                            <li><strong>Телефон</strong>: <a href="+7 (937) 947-77-57"></a> </li>
+                            <li><strong>Email</strong>: <a href="mxcstal.21@mail.ru"></a></li>
+                            <li><strong>Адрес</strong>: Россия, г. Новочебоксарск, ул. Промышленная, 36</li>
+                            <li><strong>Местоположение</strong>: <a href="https://yandex.ru/maps/37133/novocheboksarsk/house/promyshlennaya_ulitsa_36/YE4YcwVgTUMCQFtsfX1zcnlnZw==/?ll=47.520433%2C56.123385&z=16.95">Яндекс.Карты</a></li>
+                        </ul>
+                    </address>
+                </section>
 
-        <section>
-            <h2>Форма обратной связи</h2>
-            <p>Если у вас есть вопросы, заполните, пожалуйста, форму ниже, и мы свяжемся с вами в ближайшее время:</p>
+                <section>
+                    <h2>Время работы</h2>
+                    <!-- Можно использовать таблицу <table> для структурированных данных (опционально) -->
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>День недели</th>
+                                <th>Часы работы</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Понедельник-Пятница</td>
+                                <td>08:00 - 17:00</td>
+                            </tr>
+                            <tr>
+                                <td>Суббота</td>
+                                <td>08:00 - 17:00</td>
+                            </tr>
+                            <tr>
+                                <td>Воскресенье</td>
+                                <td>08:00 - 17:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
 
-            <!-- Встраивание предоставленного HTML-кода формы -->
-            <form action="/contact-submit" method="post" class="section-padded-response">
-                <label for="name">Имя:</label>
-                <!-- Добавлен autocomplete="name" -->
-                <input type="text" id="name" name="name" required autocomplete="name">
+                <section>
+                    <h2>Форма обратной связи</h2>
+                    <p>Если у вас есть вопросы, заполните, пожалуйста, форму ниже, и мы свяжемся с вами в ближайшее время:</p>
 
-                <label for="email">Email:</label>
-                <!-- Добавлен autocomplete="email" -->
-                <input type="email" id="email" name="email" required autocomplete="email">
+                    <!-- Встраивание предоставленного HTML-кода формы -->
+                    <!-- ПРИМЕЧАНИЕ: В SPA отправку формы нужно обрабатывать через JavaScript/AJAX, 
+                        чтобы страница не перезагружалась после отправки! -->
+                    <form th:action="@{/contact-submit}" method="post" class="section-padded-response">
+                        <label for="name">Имя:</label>
+                        <!-- Добавлен autocomplete="name" -->
+                        <input type="text" id="name" name="name" required autocomplete="name">
 
-                <label for="message">Сообщение:</label>
-                <!-- Для текстовых сообщений можно использовать autocomplete="off" или оставить пустым -->
-                <textarea id="message" name="message" required autocomplete="off"></textarea>
+                        <label for="email">Email:</label>
+                        <!-- Добавлен autocomplete="email" -->
+                        <input type="email" id="email" name="email" required autocomplete="email">
 
-                <button type="submit">Отправить</button>
-            </form>
-        </section>
+                        <label for="message">Сообщение:</label>
+                        <!-- Для текстовых сообщений можно использовать autocomplete="off" или оставить пустым -->
+                        <textarea id="message" name="message" required autocomplete="off"></textarea>
+
+                        <button type="submit">Отправить</button>
+                    </form>
+                </section>
+            </section>
+        </body>
+</html>

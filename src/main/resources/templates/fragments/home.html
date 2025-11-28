@@ -1,7 +1,17 @@
-<!-- src/main/resources/templates/fragments/home.html -->
-<section id="home" class="section-padded" th:fragment="content">
-    <h1>Добро пожаловать в наш цех</h1>
-    <h2>Автоматизация и роботизация вашего производства происходит здесь</h2>
-    <img src="images/00.png" alt="Фото производства компании" class="center-image" />
-    <p>«Механизированные системы» — ваш надежный партнер...</p>
-</section>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" th:href="@{/styles/style.css}" />
+    </head>
+        <body>
+            <!-- src/main/resources/templates/fragments/home.html -->
+            <section id="home" class="section-padded" th:fragment="content">
+                <h1>Добро пожаловать в наш цех</h1>
+                <h2>Автоматизация и роботизация вашего производства происходит здесь</h2>
+                <img th:src="@{/images/00.png}" alt="Фото производства компании" class="center-image" />
+                <p>«Механизированные системы» — ваш надежный партнер...</p>
+            </section>
+        </body>
+</html>
