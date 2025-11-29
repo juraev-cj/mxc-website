@@ -20,11 +20,6 @@ public class MxcController {
         return "fragments/home :: content"; // Использует Thymeleaf Fragment для главной страницы
     }
 
-    @GetMapping("/api/services-content")
-    public String getServicesContent() {
-        return "fragments/services :: content"; // Использует Thymeleaf Fragment для услуг
-    }
-
     @GetMapping("/api/portfolio-content")
     public String getPortfolioContent() {
         return "fragments/portfolio :: content"; // Использует Thymeleaf Fragment для услуг
@@ -42,7 +37,7 @@ public class MxcController {
     }
 
     // Этот метод перехватывает прямые запросы на /services, /portfolio и т.д. И возвращает базовый index.html, а JS уже загрузит нужный фрагмент.
-    @GetMapping({"/services", "/portfolio", "/contact"})
+    @GetMapping({"/portfolio", "/contact"})
     public String forwardRoutes() {
         return "index";
     }

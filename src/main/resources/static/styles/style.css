@@ -2,10 +2,48 @@ html {
     background-color: white;
 }
 
-body {
+.site-header {
+    top: 0;
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    flex-wrap: wrap; /* Добавление свойства flex-wrap, чтобы элементы переносились на новую строку, если не помещаются */
+    position: fixed;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.main-nav ul {
+    list-style-type: none;
+    padding-right: 40px;
+    margin: 0;
+    display: flex;
+}
+
+.main-nav ul li a {
+    margin: 0;
+    max-width: 100px;
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    padding: 10px 10px;
+    display: block;
+}
+
+.main-nav li a:hover {
+    background-color: #e8f808;
+}
+
+main {
     /* Указываем путь к вашей фоновой картинке */
     
-
     /* Определяем, как изображение должно располагаться */
     background-size: cover; /* Это очень важно! Растягивает изображение так, чтобы оно полностью покрывало область, сохраняя пропорции. */
     background-repeat: no-repeat; /* Запрещает повторение изображения */
@@ -13,9 +51,13 @@ body {
     background-attachment: fixed; /* Закрепляет фон, чтобы при прокрутке он оставался на месте, а контент двигался поверх него. Очень популярный эффект. */
     margin: 0;
     font-family: sans-serif;    
-    max-width: 1200px; /* Установка максимальной ширины для контента на больших экранах для лучшей читаемости */
+    /* max-width: 1200px;  Установка максимальной ширины для контента на больших экранах для лучшей читаемости */
     margin-left: auto;
     margin-right: auto;
+}
+
+.section-padded {
+    padding-top: 100px;
 }
 
 .section-padded h1 {
@@ -54,44 +96,6 @@ body {
     /* Добавление небольшого отступа сверху и снизу */
     margin-top: 1rem;
     margin-bottom: 1rem;
-}
-
-.site-header {
-    background-color: rgb(255, 255, 255);
-    padding: 10px 20px; /* Отступы внутри шапки */
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    
-    flex-wrap: wrap; /* Добавление свойства flex-wrap, чтобы элементы переносились на новую строку, если не помещаются */
-    position: fixed;
-}
-
-.logo a {
-    text-decoration: none;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.main-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-.main-nav ul li a {
-    margin: 0;
-    max-width: 100px;
-    text-align: center;
-    color: black;
-    text-decoration: none;
-    padding: 10px 10px;
-    display: block;
-}
-
-.main-nav li a:hover {
-    background-color: #e8f808;
 }
 
 footer p {
