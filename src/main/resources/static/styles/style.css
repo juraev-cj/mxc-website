@@ -57,14 +57,14 @@ body {
 }
 
 .site-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 20px; /* Отступы внутри шапки */
     z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;    
     flex-wrap: wrap; /* Добавление свойства flex-wrap, чтобы элементы переносились на новую строку, если не помещаются */
+    position: fixed;
 }
 
 .logo a {
