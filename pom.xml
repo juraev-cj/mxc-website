@@ -69,6 +69,25 @@
 	</dependencies>
 
 	<build>
+        <!-- Добавляем эту секцию resources -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <!-- Исключаем файлы в папке video из фильтрации -->
+                <excludes>
+                    <exclude>static/video/*</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <!-- Включаем их обратно, но без фильтрации -->
+                <filtering>false</filtering>
+                <includes>
+                    <include>static/video/*</include>
+                </includes>
+            </resource>
+        </resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

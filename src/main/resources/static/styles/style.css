@@ -1,9 +1,57 @@
-html {
-    background-color: white;
+/*@font-face {
+    font-family: 'Roboto Custom';
+    src: url('/fonts/Roboto-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+} */
+
+* {
+    box-sizing: border-box; /* Гарантирует, что padding и border включены в общую ширину элемента */
 }
+
+body, html {
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+    margin: 0; /* Убираем стандартный margin в 8px, который есть у body */
+    padding: 0; /* Убираем стандартный padding */
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    display: flex; /* Активируем Flexbox на всем теле страницы */
+    flex-direction: column; /* Ориентируем элементы вертикально (сверху вниз) */
+    min-height: 100vh; /* Гарантируем, что body занимает минимум 100% высоты экрана */
+}
+
+main#app-content {
+    flex-grow: 1; /* Ключевое свойство: Растягивается, чтобы заполнить пустое место */
+}
+
+.site-header, footer {
+    flex-grow: 0; 
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+}
+
+/* html {
+    background-size: cover; /* Это очень важно! Растягивает изображение так, чтобы оно полностью покрывало область, сохраняя пропорции. */
+    /* background-repeat: no-repeat; /* Запрещает повторение изображения */
+    /* background-position: center center; /* Выравнивает изображение по центру */
+    /* background-attachment: fixed; /* Закрепляет фон, чтобы при прокрутке он оставался на месте, а контент двигался поверх него. */
+    /* background-image: url('/images/phon.png');
+} */
 
 .site-header {
     top: 0;
+    left: 0;
+    right: 0;
     background-color: rgb(255, 255, 255);
     z-index: 1000;
     width: 100%;
@@ -12,6 +60,9 @@ html {
     align-items: center;    
     flex-wrap: wrap; /* Добавление свойства flex-wrap, чтобы элементы переносились на новую строку, если не помещаются */
     position: fixed;
+    border-top: 1px solid rgb(36, 128, 76);
+    border-bottom: 2px solid rgb(36, 128, 76);
+    padding: 0.5rem 2rem;
 }
 
 .logo a {
@@ -22,7 +73,6 @@ html {
 
 .main-nav ul {
     list-style-type: none;
-    padding-right: 40px;
     margin: 0;
     display: flex;
 }
@@ -38,41 +88,62 @@ html {
 }
 
 .main-nav li a:hover {
-    background-color: #e8f808;
+    background-color: #b18d3f;
 }
 
-main {
-    /* Указываем путь к вашей фоновой картинке */
-    
-    /* Определяем, как изображение должно располагаться */
-    background-size: cover; /* Это очень важно! Растягивает изображение так, чтобы оно полностью покрывало область, сохраняя пропорции. */
-    background-repeat: no-repeat; /* Запрещает повторение изображения */
-    background-position: center center; /* Выравнивает изображение по центру */
-    background-attachment: fixed; /* Закрепляет фон, чтобы при прокрутке он оставался на месте, а контент двигался поверх него. Очень популярный эффект. */
-    margin: 0;
-    font-family: sans-serif;    
-    /* max-width: 1200px;  Установка максимальной ширины для контента на больших экранах для лучшей читаемости */
-    margin-left: auto;
-    margin-right: auto;
+/* 1. Родительский контейнер, который задает область позиционирования */
+.home-section-wrapper {
+    position: relative; /* Ключевое свойство: База для абсолютного позиционирования */
+}
+
+/* 2. Текстовый блок (Позиция по умолчанию, z-index 0) */
+.home-text {
+    flex: 1;             
+    min-width: 44rem;    
+    margin-right: 50rem;
+    padding: 2rem;
+    margin-left: 3rem;
+}
+
+.home-text h1, .home-text h2 {
+    font-family: 'Roboto';
+    text-align: left;
+    width: auto;
+}
+
+.home-text h1 {
+    font-size: 3rem;
+    color: rgb(36, 128, 76);
+    margin-bottom: 2rem;
+    line-height: 0.9;
+}
+
+.home-text h2 {
+    font-size: 2rem;
+    color: #5c5c5c;
+    line-height: 1.2; 
+}
+
+/* 3. Контейнер видео (На переднем плане, поверх текста) */
+.home-video-overlay {
+    position: absolute;
+    right: 5rem;
+    z-index: 1;
+    width: 500px;
+    height: 496px;
+    margin-top: 0.5rem;
+    top: 0;
+}
+
+/* Стили для самого элемента <video> */
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .section-padded {
     padding-top: 100px;
-}
-
-.section-padded h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    color: rgb(17, 107, 17);
-}
-
-.section-padded h2 {
-    text-align: center;
-    font-size: 1.5rem;
-    margin-top: 0;
-    margin-bottom: 2rem;
 }
 
 .section-padded p {
@@ -87,23 +158,45 @@ main {
     padding: 0 10px;
 }
 
-.center-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    height: auto;
-    /* Добавление небольшого отступа сверху и снизу */
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+footer {
+    border-top: 2px solid rgb(36, 128, 76);
+    border-bottom: 1px solid rgb(36, 128, 76);
+    background-color: #f4f4f4; 
+    display: flex;
+    justify-content: space-between; /* Распределяет пространство между элементами */
+    align-items: center; /* Выравнивает элементы по центру вертикали */
 }
 
-footer p {
-    color: brown;
-    text-align: right;
+/* Стилизуем контейнер для ссылок соцсетей, чтобы они были горизонтально */
+.social-links {
+    display: flex; 
+    gap: 15px; /* Отступ между иконками */
+}
+
+
+
+/* Новый контейнер для мета-информации (копирайт) */
+.footer-meta {
+    display: flex; /* Используем flexbox, чтобы они были на одной строке */
+    align-items: center;
+    color: #000000;
+    text-align: left; /* Убеждаемся, что текст выровнен влево */
+    margin-left: 2rem;
+}
+
+.footer-policy {
     margin-right: 2rem;
-    /* Добавление отступа снизу для лучшего вида на мобильных */
-    padding-bottom: 1rem;
+}
+
+/* Стили для ссылки политики конфиденциальности */
+.footer-policy a.policy-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer-policy a.policy-link:hover {
+    text-decoration: underline; /* Добавляем подчеркивание при наведении */
 }
 
 /* Добавьте эти стили в основную часть вашего CSS файла, до медиа-запросов */
@@ -179,6 +272,21 @@ footer p {
             padding: 15px 20px;
             border-top: 1.5px solid #424242; /* Добавляем разделители */
         }
+
+        .home-layout {
+        flex-direction: column; /* Элементы друг под другом */
+        gap: 20px;
+    }
+
+    .home-text {
+        margin-right: 0; /* Убираем отрицательный отступ */
+        background-color: rgba(255, 255, 255, 1); /* Делаем фон непрозрачным */
+    }
+    
+    .home-video {
+        width: 100%; /* Видео занимает всю ширину экрана */
+        height: auto;
+    }
 
         /* Оставляем ваши старые стили для контента ниже */
         .section-padded h1 {

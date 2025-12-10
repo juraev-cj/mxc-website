@@ -13,6 +13,42 @@ public class MxcController {
         return "index";
     }
 
+    @GetMapping("/dissolvers")
+    public String dissolvers(Model model) {
+        model.addAttribute("dissolvers", "Диссольверы");
+        return "catalog/dissolvers";
+    }
+
+    @GetMapping("/tm")
+    public String tm(Model model) {
+        model.addAttribute("tm", "Тихоходная мешалка");
+        return "catalog/tm";
+    }
+
+    @GetMapping("/rsm")
+    public String rsm(Model model) {
+        model.addAttribute("rsm", "Реактор с мешалкой");
+        return "catalog/rsm";
+    }
+
+    @GetMapping("/sgb")
+    public String sgb(Model model) {
+        model.addAttribute("sgb", "Галтовочный барабан");
+        return "catalog/sgb";
+    }
+
+    @GetMapping("/stpb")
+    public String stpb(Model model) {
+        model.addAttribute("stpb", "Пьяная бочка");
+        return "catalog/stpb";
+    }
+
+    @GetMapping("/sspl")
+    public String sspl(Model model) {
+        model.addAttribute("sspl", "Сварочный стол");
+        return "catalog/sspl";
+    }
+
     // --- Новые API для загрузки контента через AJAX ---
 
     @GetMapping("/api/home-content")

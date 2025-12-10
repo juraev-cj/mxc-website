@@ -4,7 +4,6 @@ async function loadContent(url) {
     if (!response.ok) {
         return "<h1>404 Страница не найдена</h1>";
     }
-    // Предполагаем, что сервер Spring Boot возвращает чистый HTML-фрагмент
     return await response.text(); 
 }
 
@@ -13,13 +12,17 @@ async function router() {
     const path = window.location.pathname;
     const contentContainer = document.getElementById('app-content');
     
-    // В зависимости от пути, загружаем контент с соответствующего URL
+    // ОЧИЩАЕМ КОНТЕЙНЕР ПЕРЕД ЗАГРУЗКОЙ НОВОГО КОНТЕНТА
+    contentContainer.innerHTML = ''; 
+    // Сбрасываем счетчик страниц для main.js
+    currentPageIndex = 0;
+
     switch (path) {
         case '/':
-            contentContainer.innerHTML = await loadContent('/api/home-content');
-            break;
-        case '/services':
-            contentContainer.innerHTML = await loadContent('/api/services-content');
+            // При переходе на главную, запускаем логику из main.js
+            if (typeof loadNextSection === 'function') {
+                await loadNextSection(); // Загрузит первую секцию
+            }
             break;
         case '/portfolio':
             contentContainer.innerHTML = await loadContent('/api/portfolio-content');
@@ -30,17 +33,27 @@ async function router() {
         default:
             contentContainer.innerHTML = '<h1>404 Страница не найдена</h1>';
     }
+
+    // Сброс прокрутки
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+
+    // Обновление работы анимации
+    if (typeof AOS !== 'undefined') {
+        AOS.refresh(); 
+    }
+    // ЭТА СТРОКА, ЧТОБЫ ПРОВЕРИТЬ, НУЖНО ЛИ ЗАГРУЗИТЬ ЕЩЕ КОНТЕНТА СРАЗУ
+    if (window.location.pathname === '/' && typeof checkScrollPosition === 'function') {
+        checkScrollPosition();
+    }
 }
 
 // Перехват кликов по ссылкам с классом 'nav-link'
 document.addEventListener('click', (event) => {
-    // Проверяем, был ли клик по нашей SPA-ссылке
     const { target } = event;
     if (target.matches('.nav-link')) {
-        event.preventDefault(); // Отменяем стандартную перезагрузку страницы
+        event.preventDefault(); 
         const href = target.getAttribute('href');
         
-        // Меняем URL в браузере без перезагрузки страницы
         window.history.pushState({}, '', href); 
         
         router(); // Запускаем нашу функцию маршрутизации
@@ -52,3 +65,5 @@ window.addEventListener('popstate', router);
 
 // Запуск маршрутизации при первой загрузке страницы
 document.addEventListener('DOMContentLoaded', router);
+
+// !!! УДАЛЕНО: лишний AOS.refresh() в конце файла !!!
