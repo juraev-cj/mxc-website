@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <h1>Каталог Диссольверов</h1>
+
+    <div class="product-configurator">
+        
+        <h2>Выберите модель и параметры:</h2>
+
+        <!-- Выбор Типа диссольвера -->
+        <label for="type-select">Модель диссольвера:</label>
+        <select id="type-select" onchange="updateOptions(); calculatePrice()">
+            <option value="model65">До 65 л.</option>
+            <option value="model1000">До 1000 л.</option>
+            <option value="model1500">До 1500 л.</option>
+        </select>
+
+        <!-- Блок выбора Мощности привода (теперь заполняется динамически) -->
+        <label for="power-select">Мощность привода (кВт):</label>
+        <select id="power-select" onchange="calculatePrice()"></select>
+
+        <!-- Блок выбора Диаметра фрезы (теперь заполняется динамически) -->
+        <label for="cutter-select">Диаметр фрезы (мм):</label>
+        <select id="cutter-select" onchange="calculatePrice()"></select>
+        
+        <!-- Мы можем удалить этот селект, так как объем уже определяет модель -->
+        <!-- Если объем тоже является параметром внутри модели, его можно вернуть -->
+
+        <!-- Блок вывода итоговой цены -->
+        <div class="price-display">
+            Итоговая цена: <span id="final-price">0</span> руб.
+        </div>
+
+        <button onclick="submitApplication()">Оставить заявку</button>
+    </div>
+
+    <script src="/js/dissolverConfig.js"></script>
+
+</body>
+</html>
