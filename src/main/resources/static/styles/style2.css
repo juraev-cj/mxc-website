@@ -30,6 +30,8 @@ body, html {
     padding: 0; /* Убираем стандартный padding */
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
+    max-width: 100%;
 }
 
 body {
