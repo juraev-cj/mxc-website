@@ -24,9 +24,6 @@ async function router() {
                 await loadNextSection(); // Загрузит первую секцию
             }
             break;
-        case '/portfolio':
-            contentContainer.innerHTML = await loadContent('/api/portfolio-content');
-            break;
         case '/contact':
             contentContainer.innerHTML = await loadContent('/api/contact-content');
             break;
@@ -65,5 +62,3 @@ window.addEventListener('popstate', router);
 
 // Запуск маршрутизации при первой загрузке страницы
 document.addEventListener('DOMContentLoaded', router);
-
-// !!! УДАЛЕНО: лишний AOS.refresh() в конце файла !!!

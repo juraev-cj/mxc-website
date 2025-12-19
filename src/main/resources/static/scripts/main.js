@@ -16,7 +16,7 @@ document.querySelectorAll('.main-nav ul li a').forEach(link => {
 
 const contentContainer = document.getElementById('app-content');
 let currentPageIndex = 0;
-const sections = ['/api/home-content', '/api/portfolio-content', '/api/contact-content'];
+const sections = ['/api/home-content', '/api/contact-content'];
 let isLoading = false; 
 
 async function loadNextSection() {
@@ -69,5 +69,3 @@ function checkScrollPosition() {
 }
 
 window.addEventListener('scroll', checkScrollPosition);
-
-// !!! УДАЛЕНО: АВТОМАТИЧЕСКИЙ ЗАПУСК DOMContentLoaded !!!
