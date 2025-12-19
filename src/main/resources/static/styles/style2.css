@@ -30,7 +30,6 @@ body, html {
     padding: 0; /* Убираем стандартный padding */
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
     max-width: 100%;
 }
 
@@ -38,7 +37,6 @@ body {
     display: flex; /* Активируем Flexbox на всем теле страницы */
     flex-direction: column; /* Ориентируем элементы вертикально (сверху вниз) */
     min-height: 100vh; /* Гарантируем, что body занимает минимум 100% высоты экрана */
-    background-color: #d4f598;
 }
 
 .site-header, footer {
@@ -100,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: space-between;
     align-items: flex-start;
     padding: 8rem 2rem 2rem 2rem;
+    background-color: #d4f598;
 }
 
 #portfolio .left-sidebar h2 {
