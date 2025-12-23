@@ -19,6 +19,11 @@ body {
     min-height: 100vh; /* Гарантируем, что body занимает минимум 100% высоты экрана */
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 main#app-content {
     flex-grow: 1; /* Ключевое свойство: Растягивается, чтобы заполнить пустое место */
 }
@@ -27,18 +32,12 @@ main#app-content {
     flex-grow: 0; 
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
-}
-
 .site-header {
     top: 0;
     left: 0;
     right: 0;
     background-color: rgb(255, 255, 255);
     z-index: 1000;
-    width: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -76,59 +75,75 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #b18d3f;
 }
 
-/* 1. Родительский контейнер, который задает область позиционирования */
-.home-section {
-    position: relative; /* Ключевое свойство: База для абсолютного позиционирования */
+.hamburger-toggle {
+    display: none; /* Скрываем кнопку гамбургера по умолчанию на больших экранах */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 21px; /* Изменена высота для лучшего вида */
+    position: relative;
+    z-index: 100; /* Чтобы кнопка была поверх меню */
 }
 
-/* 2. Текстовый блок (Позиция по умолчанию, z-index 0) */
-.home-text {
-    flex: 1;             
-    min-width: 44rem;    
-    margin-right: 50rem;
-    padding: 2rem;
-    margin-left: 3rem;
+.hamburger-toggle .bar {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin: 4px 0; /* Уменьшен отступ между полосками */
+    background-color: #333; /* Цвет полосок (можно поменять) */
+    transition: 0.4s;
 }
 
-.home-text h1, .home-text h2 {
-    font-family: 'Roboto';
+#home.section-padded {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row; /* текст слева, видео справа */
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: white;
+    padding: 7rem 0rem 2rem 0rem;
+    box-sizing: border-box;
+}
+
+#home .left-section {
+    width: 50%;
+    flex: 1;
+    min-width: 0;
+}
+
+#home .home-text h1, .home-text h2 {
     text-align: left;
     width: auto;
+    margin-left: 2rem;
 }
 
-.home-text h1 {
+#home .home-text h1 {
     font-size: 3rem;
     color: rgb(36, 128, 76);
+    margin-top: 1rem;
     margin-bottom: 2rem;
     line-height: 0.9;
 }
 
-.home-text h2 {
+#home .home-text h2 {
     font-size: 2rem;
     color: #5c5c5c;
-    line-height: 1.2; 
+    line-height: 1.2;
 }
 
-/* 3. Контейнер видео (На переднем плане, поверх текста) */
-.home-video-overlay {
-    position: absolute;
-    right: 5rem;
-    z-index: 1;
+#home .right-section {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+}
+
+.right-section #bg-video {
     width: 500px;
-    height: 496px;
-    margin-top: 0.5rem;
-    top: 0;
-}
-
-/* Стили для самого элемента <video> */
-#bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.section-padded {
-    padding-top: 100px;
+    height: 490px;
+    border-radius: 20px;
+    margin-right: 2rem;    
 }
 
 .section-padded p {
@@ -182,32 +197,6 @@ footer {
     text-decoration: underline; /* Добавляем подчеркивание при наведении */
 }
 
-/* Добавьте эти стили в основную часть вашего CSS файла, до медиа-запросов */
-.hamburger-toggle {
-    display: none; /* Скрываем кнопку гамбургера по умолчанию на больших экранах */
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 21px; /* Изменена высота для лучшего вида */
-    position: relative;
-    z-index: 100; /* Чтобы кнопка была поверх меню */
-}
-
-.hamburger-toggle .bar {
-    display: block;
-    width: 100%;
-    height: 3px;
-    margin: 4px 0; /* Уменьшен отступ между полосками */
-    background-color: #333; /* Цвет полосок (можно поменять) */
-    transition: 0.4s;
-}
-
-/* =================================================== */
-/* МЕДИА-ЗАПРОСЫ ДЛЯ АДАПТИВНОГО ДИЗАЙНА */
-/* =================================================== */
-
 /* Для планшетов и экранов до 768px */
 @media screen and (max-width: 768px) {
 /* Показываем кнопку гамбургера на мобильных */
@@ -226,16 +215,13 @@ footer {
             /* Навигационное меню: делаем его мобильным */
             position: fixed; /* Фиксируем меню на экране */
             right: -100%; /* Изначально скрываем меню за правым краем экрана */
-            top: 96px;
-            width: 250px;
-            background-color: #e8f808; /* Фон меню */
-            transition: 0.3s; /* Плавное появление */
+            top: 128px;
+            width: 100%;
+            height: 100%;
+            background-color: rgb(36, 128, 76); /* Фон меню */
+            transition: 0.25s; /* Плавное появление */
             box-shadow: -2px 0 5px rgba(0,0,0,0.2);
             z-index: 99;
-            /* Убираем стандартную ширину 100% из старого кода */
-            width: auto;
-            height: auto;      /* Высота подстраивается под содержимое */
-            max-height: calc(100vh-60px);  /* Максимальная высота, чтобы не вылезало за экран */
         }
 
         .main-nav.active {
@@ -256,27 +242,26 @@ footer {
             border-top: 1.5px solid #424242; /* Добавляем разделители */
         }
 
-        .home-layout {
+        #home {
         flex-direction: column; /* Элементы друг под другом */
         gap: 20px;
     }
 
     .home-text {
         margin-right: 0; /* Убираем отрицательный отступ */
-        background-color: rgba(255, 255, 255, 1); /* Делаем фон непрозрачным */
     }
     
     #bg-video {
-        width: 50%; /* Видео занимает всю ширину экрана */
+        width: 100%; /* Видео занимает всю ширину экрана */
         height: 50%;
     }
 
         /* Оставляем ваши старые стили для контента ниже */
-        .section-padded h1 {
+        #contact .section-padded h1 {
             font-size: 2rem;
         }
 
-        .section-padded h2 {
+        #contact .section-padded h2 {
             font-size: 1.2rem;
         }
     }

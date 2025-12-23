@@ -7,21 +7,19 @@
 </head>
 
 <body>
-    <section id="home" class="section-padded" th:fragment="content" data-aos="fade-up" data-aos-duration="1000">
-        <div class="home-section">
+    <section id="home" class="section-padded" data-aos="fade-up" data-aos-duration="1000">
+        <div class="left-section">
             <div class="home-text">
                 <h1>Получите возможность увеличения производительности с помощью устройств МХС</h1>
                 <h2>Интегрируйте в свой производственный процесс профессиональные, надежные и ремонтопригодные машины "Механизированные системы",
                     позволяющие достичь требуемого результата с минимальными издержками</h2>
             </div>
-            <div class="home-video-overlay">
-                <!-- КОД ВИДЕОФОНА -->
-                <video autoplay muted loop playsinline id="bg-video">
-                    <source th:src="@{/video/narezka.mp4}" type="video/mp4">
-                    <!-- Резервный текст/изображение для старых браузеров -->
-                    Ваш браузер не поддерживает видеофон
-                </video>
-            </div>
+        </div>
+        <div class="right-section">
+            <video autoplay muted loop playsinline id="bg-video">
+                <source th:src="@{/video/narezka.mp4}" type="video/mp4">
+                Ваш браузер устаревшей версии и не поддерживает видеофон
+            </video>
         </div>
     </section>
 </body>
