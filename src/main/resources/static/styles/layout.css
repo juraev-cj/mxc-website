@@ -32,6 +32,7 @@ main#app-content {
     align-items: flex-start;
     background-color: white;
     padding: 7rem 0rem 2rem 0rem;
+    hyphens: auto; /* Автоматические переносы (нужен атрибут lang="ru" у html) */
 }
 /* Структура секции Home */
 #home .left-section {

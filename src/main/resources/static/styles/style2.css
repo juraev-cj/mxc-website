@@ -37,6 +37,7 @@ body {
     display: flex; /* Активируем Flexbox на всем теле страницы */
     flex-direction: column; /* Ориентируем элементы вертикально (сверху вниз) */
     min-height: 100vh; /* Гарантируем, что body занимает минимум 100% высоты экрана */
+    overflow-wrap: break-word;
 }
 
 .site-header, footer {
