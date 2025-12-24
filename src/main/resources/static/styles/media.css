@@ -73,7 +73,33 @@
 /* Для смартфонов и экранов до 480px */
 @media screen and (max-width: 480px) {
     body {
-        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    #home.section-padded {
+        flex-direction: column; /* Текст и видео встают друг под друга */
+        gap: 20px;
+        padding-top: 6rem; /* Немного уменьшил отступ сверху */
+        hyphens: auto;
+    }
+
+    #home .left-section, 
+    #home .right-section {
+        width: 100%; /* Занимают всю ширину */
+    }
+
+    .right-section #bg-video {
+        width: 100%; /* Видео растягивается по ширине экрана */
+        height: auto; /* Высота подстраивается пропорционально */
+        margin-right: 0;
+    }
+
+    #contact .section-padded h1 {
+        font-size: 2rem;
+    }
+
+    #contact .section-padded h2 {
+        font-size: 1.2rem;
     }
 
     .section-padded p {
