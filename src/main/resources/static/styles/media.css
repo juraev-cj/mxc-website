@@ -1,5 +1,8 @@
 /* Для планшетов и экранов до 768px */
 @media screen and (max-width: 768px) {
+    body {
+        overflow-wrap: break-word;
+    }
     .hamburger-toggle {
         display: block;
     }
@@ -44,6 +47,7 @@
         flex-direction: column; /* Текст и видео встают друг под друга */
         gap: 20px;
         padding-top: 6rem; /* Немного уменьшил отступ сверху */
+        hyphens: auto;
     }
 
     #home .left-section, 
