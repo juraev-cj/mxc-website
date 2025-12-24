@@ -17,7 +17,7 @@ document.querySelectorAll('.main-nav ul li a').forEach(link => {
 const contentContainer = document.getElementById('app-content');
 let currentPageIndex = 0;
 const sections = ['/api/home-content', '/api/contact-content'];
-let isLoading = false; 
+let isLoading = false;
 
 async function loadNextSection() {
     if (currentPageIndex >= sections.length || isLoading) return;

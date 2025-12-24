@@ -1,0 +1,90 @@
+/* Для планшетов и экранов до 768px */
+@media screen and (max-width: 768px) {
+    .hamburger-toggle {
+        display: block;
+    }
+
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    .main-nav {
+        position: fixed;
+        right: -100%;
+        top: 128px;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(36, 128, 76);
+        transition: 0.25s;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        z-index: 99;
+    }
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: auto;
+        margin-top: 0;
+    }
+
+    .main-nav li a {
+        text-align: center;
+        padding: 15px 20px;
+        border-top: 1.5px solid #424242;
+        color: white; /* Добавил для контраста с зеленым фоном */
+    }
+
+    #home.section-padded {
+        flex-direction: column; /* Текст и видео встают друг под друга */
+        gap: 20px;
+        padding-top: 6rem; /* Немного уменьшил отступ сверху */
+    }
+
+    #home .left-section, 
+    #home .right-section {
+        width: 100%; /* Занимают всю ширину */
+    }
+
+    .right-section #bg-video {
+        width: 100%; /* Видео растягивается по ширине экрана */
+        height: auto; /* Высота подстраивается пропорционально */
+        margin-right: 0;
+    }
+
+    #contact .section-padded h1 {
+        font-size: 2rem;
+    }
+
+    #contact .section-padded h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Для смартфонов и экранов до 480px */
+@media screen and (max-width: 480px) {
+    body {
+        max-width: 100%;
+    }
+
+    .section-padded p {
+        margin-left: 10px;
+        text-indent: 0;
+    }
+
+    footer {
+        flex-direction: column; /* Элементы футера встают друг под друга */
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    footer p {
+        text-align: center;
+        margin-right: 0;
+    }
+}
