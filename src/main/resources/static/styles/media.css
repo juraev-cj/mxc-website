@@ -97,15 +97,16 @@
     }
 
     /*Начало куска медиа конкретно для страницы portfolio.html */
-    #portfolio.content {
+    section#portfolio.content {
         flex-direction: column;
         flex-wrap: wrap;
+        padding: 7rem 0.5rem 0.5rem 0.5rem;
     }
 
     #portfolio aside.left-sidebar,
     #portfolio main.right-sidebar {
         width: 100%;
-        margin-bottom: 1rem;
+        border-radius: 20px;
     }
 
     main.right-sidebar .slider-viewport .product-card {
@@ -151,15 +152,16 @@
     }
 
     /*Начало куска медиа конкретно для страницы portfolio.html */
-    #portfolio.content {
+    section#portfolio.content {
         flex-direction: column;
         flex-wrap: wrap;
+        padding: 7rem 0.5rem 0.5rem 0.5rem;
     }
 
     #portfolio aside.left-sidebar,
     #portfolio main.right-sidebar {
         width: 100%;
-        margin-bottom: 1rem;
+        border-radius: 20px;
     }
 
     main.right-sidebar .slider-viewport .product-card {

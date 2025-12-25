@@ -7,7 +7,7 @@
 }
 
 #home .home-text h1 {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 4vw + 1rem, 3rem);
     color: rgb(36, 128, 76);
     margin-top: 1rem;
     margin-bottom: 2rem;
@@ -15,7 +15,7 @@
 }
 
 #home .home-text h2 {
-    font-size: 2rem;
+    font-size: clamp(1rem, 4vw + 1rem, 2rem);
     color: #5c5c5c;
     line-height: 1.2;
 }

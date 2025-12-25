@@ -43,12 +43,14 @@ aside.left-sidebar {
     background-color: white;
     text-align: left;
     padding: 1rem;
+    border-radius: 20px;
 }
 
 main.right-sidebar {
     width: 75%;
     background-color: white;
     padding: 1rem;
+    border-radius: 20px;
 }
 
 main.right-sidebar a {
