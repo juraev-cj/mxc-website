@@ -1,8 +1,43 @@
-/* Для планшетов и экранов до 768px */
 @media screen and (max-width: 768px) {
+    main#app-content {
+        flex-grow: 1;
+    }
     body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         overflow-wrap: break-word;
     }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #home.section-padded {
+        flex-direction: column;
+        gap: 20px;
+        padding-top: 6.5rem;
+        hyphens: auto;
+    }
+
+    #home .left-section, 
+    #home .right-section {
+        width: 100%;
+    }
+
+    .right-section #bg-video {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    #home .home-text h1, .home-text h2 {
+        text-align: left;
+        width: auto;
+        margin: 1rem;
+    }
+
     .hamburger-toggle {
         display: block;
     }
@@ -40,26 +75,43 @@
         text-align: center;
         padding: 15px 20px;
         border-top: 1.5px solid #424242;
-        color: white; /* Добавил для контраста с зеленым фоном */
+        color: white;
     }
 
     #home.section-padded {
-        flex-direction: column; /* Текст и видео встают друг под друга */
+        flex-direction: column;
         gap: 20px;
-        padding-top: 6rem; /* Немного уменьшил отступ сверху */
+        padding-top: 6.5rem;
         hyphens: auto;
     }
 
     #home .left-section, 
     #home .right-section {
-        width: 100%; /* Занимают всю ширину */
+        width: 100%;
     }
 
     .right-section #bg-video {
-        width: 100%; /* Видео растягивается по ширине экрана */
-        height: auto; /* Высота подстраивается пропорционально */
+        width: 100%;
+        height: auto;
         margin-right: 0;
     }
+
+    /*Начало куска медиа конкретно для страницы portfolio.html */
+    #portfolio.content {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #portfolio aside.left-sidebar,
+    #portfolio main.right-sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    main.right-sidebar .slider-viewport .product-card {
+        margin: 0 auto;
+    }
+    /* Конец куска медиа конкретно для страницы portfolio.html */
 
     #contact .section-padded h1 {
         font-size: 2rem;
@@ -70,28 +122,61 @@
     }
 }
 
-/* Для смартфонов и экранов до 480px */
 @media screen and (max-width: 480px) {
+    main#app-content {
+        flex-grow: 1;
+    }
     body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
         overflow-wrap: break-word;
     }
 
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
     #home.section-padded {
-        flex-direction: column; /* Текст и видео встают друг под друга */
+        flex-direction: column;
         gap: 20px;
-        padding-top: 6rem; /* Немного уменьшил отступ сверху */
+        padding-top: 6.5rem;
         hyphens: auto;
     }
 
     #home .left-section, 
     #home .right-section {
-        width: 100%; /* Занимают всю ширину */
+        width: 100%;
     }
 
+    /*Начало куска медиа конкретно для страницы portfolio.html */
+    #portfolio.content {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    #portfolio aside.left-sidebar,
+    #portfolio main.right-sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    main.right-sidebar .slider-viewport .product-card {
+        margin: 0 auto;
+    }
+    /* Конец куска медиа конкретно для страницы portfolio.html */
+
     .right-section #bg-video {
-        width: 100%; /* Видео растягивается по ширине экрана */
-        height: auto; /* Высота подстраивается пропорционально */
-        margin-right: 0;
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    #home .home-text h1, .home-text h2 {
+        text-align: left;
+        width: auto;
+        margin: 1rem;
     }
 
     #contact .section-padded h1 {
@@ -107,14 +192,26 @@
         text-indent: 0;
     }
 
-    footer {
-        flex-direction: column; /* Элементы футера встают друг под друга */
-        gap: 10px;
-        padding: 10px 0;
+    .social-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem; 
     }
 
-    footer p {
-        text-align: center;
-        margin-right: 0;
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-meta {
+        display: flex; 
+        align-items: center;
+        color: #000000;
+        text-align: left; 
+        margin: 0;
+    }
+
+    .footer-policy {
+        margin: 0;
     }
 }

@@ -3,28 +3,9 @@ main#app-content {
     flex-grow: 1; /* Растягивается на всё свободное место */
 }
 
-.site-header, footer {
-    flex-grow: 0; 
-}
-
-.site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: rgb(255, 255, 255);
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;    
-    flex-wrap: wrap;
-    border-top: 1px solid rgb(36, 128, 76);
-    border-bottom: 2px solid rgb(36, 128, 76);
-    padding: 0.5rem 2rem;
-}
-
 /* Секции */
 #home.section-padded {
+    flex-grow: 1;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row; 
@@ -45,14 +26,4 @@ main#app-content {
     width: 50%;
     display: flex;
     justify-content: right;
-}
-
-/* Футер */
-footer {
-    border-top: 2px solid rgb(36, 128, 76);
-    border-bottom: 1px solid rgb(36, 128, 76);
-    background-color: #f4f4f4; 
-    display: flex;
-    justify-content: space-between; 
-    align-items: center; 
 }

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/styles/reset.css}" />
+    <link rel="stylesheet" th:href="@{/styles/base.css}" />
     <link rel="stylesheet" th:href="@{/styles/layout.css}" />
     <link rel="stylesheet" th:href="@{/styles/components.css}" />
     <link rel="stylesheet" th:href="@{/styles/media.css}" />
@@ -31,14 +31,8 @@
         <nav class="main-nav" id="mainMenu">
             <ul>
                 <!-- Добавляем классы 'nav-link' и атрибуты 'data-path' -->
-                <li><a href="/portfolio" class="nav-link" data-path="/portfolio">
-                    <img src="/images/icons/catalog.png" alt="Каталог" class="nav-icon">
-                </a></li>
-                <!--<a href="https://www.flaticon.com/ru/free-icons/-" title="каталог товаров иконки">Каталог товаров иконки от Slamlabs - Flaticon</a>-->
-                <!--<a href="https://www.flaticon.com/ru/free-icons/" title="контакт иконки">Контакт иконки от Uniconlabs - Flaticon</a>-->
-                <li><a href="/contact" class="nav-link" data-path="/contact">
-                    <img src="/images/icons/contacts.png" alt="Контакты" class="nav-icon">
-                </a></li>
+                <li><a href="/portfolio">Портфолио</a></li>
+                <li><a href="/contact">Связь</a></li>
             </ul>
         </nav>
     </header>
@@ -52,16 +46,15 @@
 
     <footer>
         <div class="footer-meta">
-        <p>&copy; 2025 Все права защищены.</p>
+        <p>&copy; 2025 All rights reserved</p>
         </div>
         <div class="social-links">
-            <a href="https://instagram.com" target="_blank"><img th:src="@{/images/icons/instagram.png}"
-                    alt="Instagram" /></a>
-            <a href="https://youtube.com" target="_blank"><img th:src="@{/images/icons/youtube.png}"
-                    alt="Youtube" /></a>
+            <a href="https://vk.com" target="_blank"><img th:src="@{/images/icons/vk.png}"
+                    alt="VKontakte" /></a>
+            <a href="https://rutube.com" target="_blank"><img th:src="@{/images/icons/rutube.png}"
+                    alt="Rutube" /></a>
             <a href="https://telegram.org" target="_blank"><img th:src="@{/images/icons/telegram.png}"
                     alt="Telegram" /></a>
-            <a href="wa.me" target="_blank"><img th:src="@{/images/icons/whatsapp.png}" alt="WhatsApp" /></a>
         </div>
         <div class="footer-policy">
             <p><a href="/privacy-policy.html" class="policy-link">Политика конфиденциальности</a></p>
