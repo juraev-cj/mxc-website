@@ -34,34 +34,34 @@
             <details class="filter-group">
                 <summary>Диссольверы</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="dissolver"> Малая мощность</label>
-                    <label><input type="checkbox" name="type" value="mixer"> Средняя мощность</label>
-                    <label><input type="checkbox" name="type" value="homogenizer"> Высокая мощность</label>
+                    <label><input type="checkbox" name="type" value="low"> Малая мощность</label>
+                    <label><input type="checkbox" name="type" value="med"> Средняя мощность</label>
+                    <label><input type="checkbox" name="type" value="high"> Высокая мощность</label>
                 </div>
             </details>
             
             <details class="filter-group">
                 <summary>Миксеры</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="dissolver"> Рамный</label>
-                    <label><input type="checkbox" name="type" value="mixer"> Шнековый</label>
-                    <label><input type="checkbox" name="type" value="homogenizer"> Ленточный</label>
-                    <label><input type="checkbox" name="type" value="homogenizer"> Лопастный</label>
-                    <label><input type="checkbox" name="type" value="homogenizer"> Конусный</label>
+                    <label><input type="checkbox" name="type" value="ram"> Рамный</label>
+                    <label><input type="checkbox" name="type" value="shnek"> Шнековый</label>
+                    <label><input type="checkbox" name="type" value="lent"> Ленточный</label>
+                    <label><input type="checkbox" name="type" value="lopast"> Лопастный</label>
+                    <label><input type="checkbox" name="type" value="konus"> Конусный</label>
                 </div>
             </details>
 
             <details class="filter-group">
                 <summary>Гомогенизатор</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="dissolver"> Эмульгатор с высоким усилием сдвига</label>
+                    <label><input type="checkbox" name="type" value="emulgator"> Эмульгатор с высоким усилием сдвига</label>
                 </div>
             </details>
 
             <details class="filter-group">
                 <summary>Резервуар</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="dissolver"> Нержавеющая дежа</label>
+                    <label><input type="checkbox" name="type" value="dezha"> Нержавеющая дежа</label>
                 </div>
             </details>
         </aside>
@@ -69,105 +69,106 @@
 
         <main class="right-sidebar">
             <div class="slider-viewport">
-                    <div class="product-card">
+                    <div class="product-card" data-type="low">
                         <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
                             <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="med">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="high">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="low">
                         <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
                             <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="med">
                         <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
                             <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="high">
                         <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
                             <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="low">
                         <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
                             <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="med">
                         <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
                             <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="high">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="low">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="med">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="high">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="ram">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="ram">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="ram">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="ram">
                         <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="shnek">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="shnek">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="shnek">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="emulgator">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="lent">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="lopast">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="konus">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card">
+                    <div class="product-card" data-type="dezha">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
             </div>
         </main>
     </section>
+    <script th:src="@{/scripts/productsConfig.js}"></script>
 </body>
 
     <footer>
