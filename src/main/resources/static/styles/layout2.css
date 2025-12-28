@@ -16,6 +16,7 @@
     margin-bottom: 1rem;
     color: aliceblue;
     background-color: rgb(36, 128, 76);
+    border-radius: 10px;
 }
 
 #portfolio .filter-group {
@@ -67,7 +68,7 @@ main.right-sidebar .slider-viewport {
     gap: 2rem;
     overflow-x: auto;
     overflow-y: hidden;
-    padding-bottom: 2rem;   
+    padding-bottom: 2rem;
 }
 
 /* Настраиваем высоту всей полосы прокрутки */
@@ -87,7 +88,7 @@ main.right-sidebar .slider-viewport::-webkit-scrollbar-track {
 main.right-sidebar .slider-viewport::-webkit-scrollbar-thumb {
     background: white; /* Цвет ползунка */
     border-radius: 10px;
-    border: 1px solid rgb(36, 128, 76); /* Хак: рамка в цвет фона создает иллюзию отступа вокруг ползунка */
+    border: 1px solid rgb(36, 128, 76);
     background-clip: padding-box;
 }
 
@@ -107,6 +108,7 @@ main.right-sidebar .slider-viewport .product-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     width: 214px; /* Жестко задаем ширину */
     /* Либо через min-width / max-width, чтобы они были идентичны */
@@ -132,6 +134,7 @@ main.right-sidebar .slider-viewport .product-card {
 #portfolio .right-sidebar .product-card p {
     margin: 0 0; 
     font-size: 1rem;
+    text-align: center;
     line-height: 1.2;
     color: black;
 }
