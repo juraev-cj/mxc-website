@@ -25,6 +25,16 @@ public class MxcController {
         return "fragments/home :: content"; // Использует Thymeleaf Fragment для главной страницы
     }
 
+    @GetMapping("/api/advantages-content")
+    public String getAdvantagesContent() {
+        return "fragments/advantages :: content"; // Использует Thymeleaf Fragment для главной страницы
+    }
+
+    @GetMapping("/api/chain-content")
+    public String getChainContent() {
+        return "fragments/chain :: content"; // Использует Thymeleaf Fragment для главной страницы
+    }
+
     @GetMapping("/api/contact-content")
     public String getContactContent() {
         return "fragments/contact :: content"; // Использует Thymeleaf Fragment для услуг

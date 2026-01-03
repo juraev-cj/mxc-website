@@ -100,6 +100,12 @@
         margin-right: 0;
     }
 
+    /* Начало блока advantages.html */
+    .advantages-grid {
+    margin: 5rem 1rem;
+    }
+    /* Конец блока advantages.html */
+
     /*Начало куска медиа конкретно для страницы portfolio.html */
     section#portfolio.content {
         flex-direction: column;

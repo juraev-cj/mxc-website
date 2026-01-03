@@ -80,15 +80,37 @@ h1, h2, h3, h4, h5, h6 {
 
 .main-nav ul li a {
     text-align: center;
-    color: black;
+    color: rgb(36, 128, 76);
     text-decoration: none;
     padding: 10px 10px;
     display: block;
+    position: relative;
+    transition: color 0.3s ease;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.main-nav li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #b18d3f; /* Ваш золотистый цвет */
+    transition: width 0.3s ease;
 }
 
 .main-nav li a:hover {
-    background-color: #b18d3f;
+    color: #b18d3f; /* Текст тоже меняет цвет */
+    background-color: transparent; /* Убираем старую заливку */
 }
+
+.main-nav li a:hover::after {
+    width: 100%; /* Линия плавно растягивается */
+}
+
 
 /* Гамбургер-меню */
 .hamburger-toggle {
