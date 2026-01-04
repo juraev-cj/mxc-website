@@ -10,17 +10,6 @@ main#app-content {
     width: 100%;
 }
 
-/* На время загрузки можно скрыть футер, чтобы он вообще не дергался */
-footer {
-    display: none;
-}
-
-/* Когда контент загружен, мы покажем футер (класс добавим через JS) */
-.content-loaded footer {
-    display: block;
-}
-
-
 html::-webkit-scrollbar {
     width: 14px;
 }
@@ -51,7 +40,7 @@ body, html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100dvh;
     min-width: 320px; /* СТОПОР ДЛЯ КОНСОЛИ */
     overflow-wrap: break-word; /* Современный стандарт для разрыва длинных слов */
 }
