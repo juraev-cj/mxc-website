@@ -1,55 +1,18 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="ru">
+
 <head>
-    <title th:text="${contact}"></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" th:href="@{/styles/style4.css}" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
-    <!-- НАЧАЛО БЛОКА ШАПКИ -->
-    <header class="site-header">
-        <div class="logo">            
-            <a href="/"><img th:src="@{images/photo1.png}" alt="МХС - Механизированные системы" /></a>
-        </div>
-         <!-- Кнопка-гамбургер (добавляем) -->
-        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Открыть меню">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-        <nav class="main-nav" id="mainMenu">
-            <ul>
-                <li><a href="/index">Главная</a></li>
-                <li><a href="/services">Услуги</a></li>
-                <li><a href="/portfolio">Портфолио</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- КОНЕЦ БЛОКА ШАПКИ -->
-
-    <main>
-
-        <!-- СЕКЦИЯ КОНТАКТЫ -->
-        <section id="contact" class="section-padded">
+    <section id="contact" class="section-padded" th:fragment="content" data-aos="fade-up" data-aos-duration="1000">
 
         <section>
-            <h2>Наши контактные данные</h2>
-            <p>Мы рады возможности пообщаться и ответить на все ваши вопросы. Свяжитесь с нами любым удобным способом!</p>
-            <!-- Используем тег <address> для семантического выделения контактной информации -->
-            <address>
-                <ul>
-                    <li><strong>Телефон</strong>: +7 (937) 947-77-57</li>
-                    <li><strong>Email</strong>: mxcstal.21@mail.ru</li>
-                    <li><strong>Адрес</strong>: г. Новочебоксарск, ул. Промышленная, 36</li>
-                    <li><strong>Местоположение:</strong> <a href="https://yandex.ru/maps/37133/novocheboksarsk/house/promyshlennaya_ulitsa_36/YE4YcwVgTUMCQFtsfX1zcnlnZw==/?ll=47.520433%2C56.123385&z=16.95">Яндекс.Карты</a></li>
-                </ul>
-            </address>
-        </section>
-
-        <section>
-            <h2>Время работы</h2>
-            <!-- Можно использовать таблицу <table> для структурированных данных (опционально) -->
+            <h3>Время работы</h3>
+            <div class="table">
             <table>
                 <thead>
                     <tr>
@@ -72,36 +35,44 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
+
+            <h3>Наши контактные данные</h3>
+            <div class="address">
+                <p>Мы рады возможности пообщаться и ответить на все ваши вопросы. Свяжитесь с нами любым удобным способом!</p>
+                <address>
+                    <ul>
+                        <li><strong>Телефон:</strong> <a href="tel:+79379477757">+7(937)947-77-57</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:mxcstal.21@mail.ru">mxcstal.21@mail.ru</a></li>
+                        <li><strong>Адрес:</strong> Россия, г. Новочебоксарск, ул. Промышленная, 36</li>
+                        <li><strong>Местоположение:</strong> <a href="https://yandex.ru/maps/37133/novocheboksarsk/house/promyshlennaya_ulitsa_36/YE4YcwVgTUMCQFtsfX1zcnlnZw==/?ll=47.520433%2C56.123385&z=16.95">Яндекс.Карты</a></li>
+                    </ul>
+                </address>
+            </div>
         </section>
 
         <section>
-            <h2>Форма обратной связи</h2>
+            <h3>Форма обратной связи</h3>
             <p>Если у вас есть вопросы, заполните, пожалуйста, форму ниже, и мы свяжемся с вами в ближайшее время:</p>
 
-            <!-- Встраивание предоставленного HTML-кода формы -->
-            <form action="/contact-submit" method="post" class="section-padded-response">
+            <!-- Отправку формы обрабатываем через JavaScript/AJAX, чтобы страница не перезагружалась после отправки! -->
+            <form th:action="@{/contact-submit}" method="post" class="section-padded-response">
                 <label for="name">Имя:</label>
-                <!-- Добавлен autocomplete="name" -->
                 <input type="text" id="name" name="name" required autocomplete="name">
 
+                <label for="city">Город:</label>
+                <input type="text" id="city" name="city" required autocomplete="address-level2">
+
                 <label for="email">Email:</label>
-                <!-- Добавлен autocomplete="email" -->
                 <input type="email" id="email" name="email" required autocomplete="email">
 
                 <label for="message">Сообщение:</label>
-                <!-- Для текстовых сообщений можно использовать autocomplete="off" или оставить пустым -->
                 <textarea id="message" name="message" required autocomplete="off"></textarea>
 
                 <button type="submit">Отправить</button>
             </form>
         </section>
-        
-    </main>
-
-    <footer>
-        <!-- Подвал сайта -->
-        <p>&copy; 2025 Все права защищены.</p>
-    </footer>
-<script th:src="@{/scripts/main.js}"></script>
+    </section>
 </body>
+
 </html>
