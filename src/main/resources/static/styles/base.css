@@ -33,10 +33,15 @@ body, html {
 }
 
 body {
-    flex: 1;
     display: flex;
+    flex: 1;
     min-width: 320px; /* СТОПОР ДЛЯ КОНСОЛИ */
     overflow-wrap: break-word; /* Современный стандарт для разрыва длинных слов */
+}
+
+#home, #advantages, #chain, #contact {
+    min-height: 100dvh; /* Резервирует место под экран */
+    contain: paint;     /* Оптимизирует отрисовку */
 }
 
 h1, h2, h3, h4, h5, h6 {
