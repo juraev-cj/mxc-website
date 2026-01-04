@@ -1,0 +1,60 @@
+/* Каркас сайта */
+main#app-content {
+    flex-grow: 1; /* Растягивается на всё свободное место */
+}
+
+/* Секции */
+#home.section-padded {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: white;
+    padding: 7rem 0rem 7rem 0rem;
+    hyphens: auto; /* Автоматические переносы (нужен атрибут lang="ru" у html) */
+}
+/* Структура секции Home */
+#home .left-section {
+    width: 50%;
+    flex: 1;
+    min-width: 0;
+}
+
+#home .right-section {
+    width: 50%;
+    display: flex;
+    justify-content: right;
+}
+
+/* Текстовые блоки в секции Home */
+#home .home-text h1, .home-text h2 {
+    text-align: left;
+    width: auto;
+    margin-left: 2rem;
+}
+
+#home .home-text h1 {
+    font-size: 4rem;
+    color: rgb(36, 128, 76);
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    line-height: 1;
+    text-align: left;
+}
+
+#home .home-text h2 {
+    font-size: 2.5rem;
+    color: #5c5c5c;
+    line-height: 1.2;
+    text-align: left;
+}
+
+/* Видео */
+.right-section #bg-video {
+    width: 500px;
+    height: 490px;
+    border-radius: 20px;
+    margin-right: 2rem;    
+}

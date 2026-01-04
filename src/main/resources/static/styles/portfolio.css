@@ -1,0 +1,140 @@
+#portfolio.content {
+    flex-grow: 1; /* РАСТЯГИВАЕТ блок, выталкивая футер вниз */
+    display: flex; /* Чтобы aside и основной контент внутри секции стояли в ряд */
+    flex-wrap: nowrap;
+    flex-direction: row; /* Сайдбар слева, контент справа */
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8rem 2rem 2rem 2rem;
+    background-color: #d4f598bd;
+    hyphens: auto;
+    gap: 1rem;
+}
+
+#portfolio .left-sidebar h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: aliceblue;
+    background-color: rgb(36, 128, 76);
+    border-radius: 10px;
+}
+
+#portfolio .filter-group {
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.filter-content label {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Отступ между квадратиком чекбокса и текстом */
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 2px 0;
+}
+
+.filter-content input[type="checkbox"] {
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+aside.left-sidebar {
+    width: 25%;
+    background-color: white;
+    text-align: left;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+main.right-sidebar {
+    width: 75%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+main.right-sidebar a {
+    text-decoration: none;
+}
+
+main.right-sidebar .slider-viewport {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(13rem, 1fr));
+    /* Заставляем карточки выстраиваться в колонки ВПРАВО, а не вниз */
+    grid-auto-flow: column;
+    /* 3. Задаем ширину каждой колонки (чтобы они не сжимались) */
+    grid-auto-columns: minmax(13rem, 1fr);
+    gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 2rem;
+}
+
+/* Настраиваем высоту всей полосы прокрутки */
+main.right-sidebar .slider-viewport::-webkit-scrollbar {
+    height: 0.5rem; /* Общая высота области скроллбара */
+}
+
+/* Настраиваем "дорожку", по которой едет ползунок */
+main.right-sidebar .slider-viewport::-webkit-scrollbar-track {
+    background-color: rgb(36, 128, 76);
+    border-radius: 3px;
+    margin: 0 1rem;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+/* Настраиваем сам ползунок */
+main.right-sidebar .slider-viewport::-webkit-scrollbar-thumb {
+    background: white; /* Цвет ползунка */
+    border-radius: 10px;
+    border: 1px solid rgb(36, 128, 76);
+    background-clip: padding-box;
+}
+
+@media (max-width: 1024px) {
+    main.right-sidebar {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    main.right-sidebar {
+        grid-template-columns: 1fr;
+    }
+}
+
+main.right-sidebar .slider-viewport .product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 214px; /* Жестко задаем ширину */
+    /* Либо через min-width / max-width, чтобы они были идентичны */
+    min-width: 214px;
+    max-width: 214px;
+}
+
+#portfolio .right-sidebar .slider-viewport .product-card img {
+    margin-top: 0.3rem;
+    border: 1px solid #abb6ca;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#portfolio .right-sidebar .product-card img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: #ddd;
+}
+
+#portfolio .right-sidebar .product-card p {
+    margin: 0 0; 
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.2;
+    color: black;
+}

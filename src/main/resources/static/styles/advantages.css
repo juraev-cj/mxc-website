@@ -1,0 +1,68 @@
+/* Контейнер для центрирования */
+.advantages-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Главные заголовки */
+.advantages-container h1 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.advantages-container h2 {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #4d4d4d;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Сетка карточек */
+.advantages-grid {
+    margin: 5rem 0rem;
+    display: grid;
+    /* 2 колонки на планшетах, 4 на десктопе */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Сама карточка */
+.advantages-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid rgb(36, 128, 76); /* Ваш фирменный цвет */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advantages-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Заголовки внутри карточек */
+.advantages-card h3 {
+    font-size: 1.25rem;
+    color: rgb(36, 128, 76);
+    margin-bottom: 15px;
+    min-height: 3rem; /* Чтобы заголовки были одной высоты */
+    display: flex;
+    align-items: center;
+}
+
+/* Текст описания */
+#advantages.section-padded .advantages-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: #555;
+    margin: 0;
+    text-indent: 0;
+    text-align: center;
+}
