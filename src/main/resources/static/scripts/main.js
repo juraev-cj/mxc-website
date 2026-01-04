@@ -25,7 +25,7 @@ async function loadNextSection() {
     // Проверяем путь здесь еще раз, чтобы удостовериться, что мы на главной
     if (window.location.pathname !== '/') {
         isLoading = false;
-        return; 
+        return;
     }
 
     isLoading = true;
