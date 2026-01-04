@@ -3,13 +3,6 @@
     box-sizing: border-box;
 }
 
-main#app-content {
-    /* 100dvh — это 100% высоты экрана с учетом мобильных панелей */
-    min-height: 100dvh; 
-    display: block;
-    width: 100%;
-}
-
 html::-webkit-scrollbar {
     width: 14px;
 }
