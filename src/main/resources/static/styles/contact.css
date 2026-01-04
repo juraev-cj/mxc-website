@@ -1,4 +1,9 @@
 #contact {
+    min-height: 100dvh; /* Резервирует место под экран */
+    contain: paint;     /* Оптимизирует отрисовку */
+}
+
+#contact {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 50px;

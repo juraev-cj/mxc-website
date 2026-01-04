@@ -3,6 +3,11 @@ main#app-content {
     flex-grow: 1; /* Растягивается на всё свободное место */
 }
 
+#home {
+    min-height: 100dvh; /* Резервирует место под экран */
+    contain: paint;     /* Оптимизирует отрисовку */
+}
+
 /* Секции */
 #home.section-padded {
     flex-grow: 1;

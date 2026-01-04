@@ -1,3 +1,8 @@
+#chain {
+    min-height: 100dvh; /* Резервирует место под экран */
+    contain: paint;     /* Оптимизирует отрисовку */
+}
+
 .chain-container {
     max-width: 1200px;
     margin: 0 auto;
