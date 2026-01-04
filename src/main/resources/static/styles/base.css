@@ -3,6 +3,24 @@
     box-sizing: border-box;
 }
 
+main#app-content {
+    /* 100dvh — это 100% высоты экрана с учетом мобильных панелей */
+    min-height: 100dvh; 
+    display: block;
+    width: 100%;
+}
+
+/* На время загрузки можно скрыть футер, чтобы он вообще не дергался */
+footer {
+    display: none;
+}
+
+/* Когда контент загружен, мы покажем футер (класс добавим через JS) */
+.content-loaded footer {
+    display: block;
+}
+
+
 html::-webkit-scrollbar {
     width: 14px;
 }
