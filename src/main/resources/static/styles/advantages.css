@@ -1,8 +1,3 @@
-#advantages {
-    min-height: 100dvh; /* Резервирует место под экран */
-    contain: paint;     /* Оптимизирует отрисовку */
-}
-
 /* Контейнер для центрирования */
 .advantages-container {
     max-width: 1200px;
