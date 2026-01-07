@@ -37,7 +37,7 @@ public class MxcController {
 
     @GetMapping("/api/contact-content")
     public String getContactContent() {
-        return "fragments/contact :: content"; // Использует Thymeleaf Fragment для услуг
+        return "contact :: content"; // Использует Thymeleaf Fragment для услуг
     }
 
     @GetMapping("/thanks")
