@@ -25,7 +25,22 @@ async function router() {
             }
             break;
         case '/contact':
-            contentContainer.innerHTML = await loadContent('/api/contact-content');
+            const contactHtml = await loadContent('/api/contact-content');
+            contentContainer.innerHTML = contactHtml;
+
+            // Ждем микро-паузу, чтобы DOM успел обновиться
+            setTimeout(() => {
+                const contactBlock = document.getElementById('contact');
+                if (contactBlock) {
+                    // ПРИНУДИТЕЛЬНО запускаем анимацию, добавляя класс AOS вручную
+                    contactBlock.classList.add('aos-animate');
+                    
+                    // Если AOS загружен, освежаем его для порядка
+                    if (typeof AOS !== 'undefined') {
+                        AOS.refresh();
+                    }
+                }
+            }, 50);
             break;
         default:
             contentContainer.innerHTML = '<h1>404 Страница не найдена</h1>';

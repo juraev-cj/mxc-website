@@ -139,6 +139,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Футер */
+[th\:fragment="content"] {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh; /* Занимает весь экран */
+    margin: 0;
+}
 footer {
     flex-shrink: 0; /* Запрещает футеру сжиматься */
     margin-top: auto;

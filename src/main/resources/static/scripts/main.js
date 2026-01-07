@@ -38,9 +38,13 @@ async function loadNextSection() {
             contentContainer.insertAdjacentHTML('beforeend', html);
             currentPageIndex++;
             
-            if (typeof AOS !== 'undefined') {
-                AOS.refresh(); 
-            }
+            setTimeout(() => {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init();
+                    AOS.refresh();
+                    window.dispatchEvent(new Event('scroll'));
+                }
+            }, 100); // Даем время на отрисовку DOM
         } else {
             console.error(`Ошибка сервера ${response.status} при загрузке секции: ${url}`);
         }
