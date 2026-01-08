@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="pop-up-fragment" id="pop-up" class="pop-up-overlay" style="display:none;">
+        <div class="pop-up-window">
+            <span class="close-btn">&times;</span>
+            <div class="pop-up-grid">
+                <div class="pop-up-image">
+                    <img id="modal-img" src="" alt="Изображение устройства">
+                </div>
+                <div class="pop-up-info">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-desc"></p>
+                    <div class="modal-price" id="modal-price"></div>
+                    
+                    <!-- Ваша форма заказа -->
+                    <form id="orderForm">
+                        <input type="hidden" name="productName" id="hiddenProductName">
+                        <input type="text" name="userName" placeholder="Ваше имя" required>
+                        <input type="text" name="userCity" placeholder="Ваш город" required>
+                        <input type="tel" name="userPhone" placeholder="Ваш телефон" required>
+                        <div class="privacy-policy">
+                            <input type="checkbox" id="privacy-check" required>
+                            <label for="privacy-check">
+                                Я согласен на <a href="/privacy-policy" target="_blank">обработку персональных данных</a>
+                            </label>
+                        </div>
+                        <button type="submit" id="order-btn" class="order-button">Заказать</button>
+                    </form>
+                    <div id="statusMessage"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

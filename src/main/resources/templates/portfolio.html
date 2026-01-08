@@ -70,6 +70,7 @@
                 <div class="filter-content">
                     <label><input type="checkbox" name="type" value="bochka"> Мощность1</label>
                     <label><input type="checkbox" name="type" value="bochka"> Мощность2</label>
+                    <label><input type="checkbox" name="type" value="bochka"> Мощность2</label>
                 </div>
             </details>
 
@@ -78,6 +79,25 @@
                 <div class="filter-content">
                     <label><input type="checkbox" name="type" value="baraban"> Мощность1</label>
                     <label><input type="checkbox" name="type" value="baraban"> Мощность2</label>
+                    <label><input type="checkbox" name="type" value="baraban"> Мощность2</label>
+                    <label><input type="checkbox" name="type" value="baraban"> Мощность2</label>
+                </div>
+            </details>
+
+            <details class="filter-group">
+                <summary>Реактор с мешалкой</summary>
+                <div class="filter-content">
+                    <label><input type="checkbox" name="type" value="bochka"> Мощность1</label>
+                    <label><input type="checkbox" name="type" value="bochka"> Мощность2</label>
+                    <label><input type="checkbox" name="type" value="bochka"> Мощность2</label>
+                </div>
+            </details>
+
+            <details class="filter-group">
+                <summary>Сварочный стол пластмассовых листов</summary>
+                <div class="filter-content">
+                    <label><input type="checkbox" name="type" value="bochka"> Рабочая зона 1.5 метра</label>
+                    <label><input type="checkbox" name="type" value="bochka"> Рабочая зона 2 метра</label>
                 </div>
             </details>
         </aside>
@@ -85,106 +105,108 @@
 
         <main class="right-sidebar">
             <div class="slider-viewport">
-                    <div class="product-card" data-type="low">
-                        <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
+                    <div class="product-card" data-type="low" data-product-id="dmm_1" style="cursor: pointer;">
+                        <a href="/dissol'very" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
                             <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
                     </div>
-                    <div class="product-card" data-type="med">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                    <div class="product-card" data-type="med" data-product-id="dmm_2" style="cursor: pointer;">
+                        <a href="/dissol'very" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
                             <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
                     </div>
-                    <div class="product-card" data-type="high">
+                    <div class="product-card" data-type="high" data-product-id="dmm_3" style="cursor: pointer;">
+                        <a href="/dissol'very" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
+                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="low" data-product-id="dmm_4" style="cursor: pointer;">
+                        <a href="/miksery" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
+                            <p>Миксер рамный</p><p>Цена: 0.155 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="med" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/miksery" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
+                            <p>Миксер шнековый</p><p>Цена: 0.155 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="high" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/miksery" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
+                            <p>Миксер ленточный</p><p>Цена: 0.155 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="low" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/miksery" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
+                            <p>Миксер лопастный</p><p>Цена: 0.155 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="med" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/miksery" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
+                            <p>Миксер конусный</p><p>Цена: 0.155 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="high" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/gomogenizator" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                            <p>Эмульгатор</p><p>Цена: 0.220 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="low" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/rezervuar" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                            <p>Нержавеющая дежа</p><p>Цена: 0.220 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="med" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/p'yanaya-bochka" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                            <p>Пьяная бочка</p><p>Цена: 0.220 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="high" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/p'yanaya-bochka" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                            <p>Пьяная бочка</p><p>Цена: 0.220 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="ram" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/p'yanaya-bochka" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                            <p>Пьяная бочка</p><p>Цена: 0.220 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="ram" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/galtovochnyy-baraban" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                            <p>50 Литров</p><p>Цена: 0.220 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="ram" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/galtovochnyy-baraban" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                            <p>100 Литров</p><p>Цена: 0.220 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="ram" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/galtovochnyy-baraban" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
+                            <p>200 Литров</p><p>Цена: 0.220 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="shnek" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/galtovochnyy-baraban" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
+                            <p>300 Литров</p><p>Цена: 0.280 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="emulgator" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/reaktor-s-meshalkoy" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
+                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="lent" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/reaktor-s-meshalkoy" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
+                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="lopast" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/reaktor-s-meshalkoy" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
+                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="shnek" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/svarochnyy-stol" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
+                            <p>Рабочая зона 1.5 метра</p><p>Цена: 0.280 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="shnek" data-product-id="dmm_15" style="cursor: pointer;">
+                        <a href="/svarochnyy-stol" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
+                            <p>Рабочая зона 2 метра</p><p>Цена: 0.280 млн.руб.</p>
+                    </div>
+                    <div class="product-card" data-type="konus" data-product-id="dmm_15" style="cursor: pointer;">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
-                    <div class="product-card" data-type="low">
-                        <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
-                            <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="med">
-                        <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
-                            <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="high">
-                        <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
-                            <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="low">
-                        <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
-                            <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="med">
-                        <a href="/dmm" class="dmm"><img th:src="@{/images/dissolvers/dmm/image1.png}"></a>
-                            <p>Диссольвер 1.5-5.5 кВТ</p><p>Цена: 0.155 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="high">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
-                            <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="low">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
-                            <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="med">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
-                            <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="high">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
-                            <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="ram">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
-                            <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="ram">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
-                            <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="ram">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
-                            <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="ram">
-                        <a href="/dcm" class="dcm"><img th:src="@{/images/dissolvers/dcm/image1.png}"></a>
-                            <p>Диссольвер 3-11 кВТ</p><p>Цена: 0.220 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="shnek">
-                        <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
-                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="shnek">
-                        <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
-                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="shnek">
-                        <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
-                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="emulgator">
-                        <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
-                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="lent">
-                        <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
-                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="lopast">
-                        <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
-                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="konus">
-                        <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
-                            <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
-                    </div>
-                    <div class="product-card" data-type="dezha">
+                    <div class="product-card" data-type="dezha" data-product-id="dmm_15" style="cursor: pointer;">
                         <a href="/dvm" class="dvm"><img th:src="@{/images/dissolvers/dvm/image1.png}"></a>
                             <p>Диссольвер 11-55 кВТ</p><p>Цена: 0.280 млн.руб.</p>
                     </div>
             </div>
         </main>
     </section>
+    <div th:replace="~{fragments/pop-up :: pop-up-fragment}"></div>
     <script th:src="@{/scripts/productsConfig.js}"></script>
+    <script th:src="@{/scripts/pop-up.js}"></script>
 </body>
 
     <footer>

@@ -1,8 +1,15 @@
 package com.mehsistemy.mxc.controllers;
 
+import com.mehsistemy.mxc.services.EmailService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Map;
 
 @Controller
 public class MxcController {
@@ -46,9 +53,32 @@ public class MxcController {
         return "thanks";
     }
 
-    // Этот метод перехватывает прямые запросы на /services, /portfolio и т.д. И возвращает базовый index.html, а JS уже загрузит нужный фрагмент.
+    // Этот метод перехватывает прямые запросы на /contact И возвращает базовый index.html, а JS уже загрузит нужный фрагмент.
     @GetMapping({"/contact"})
     public String forwardRoutes() {
         return "index";
+    }
+
+    private final EmailService emailService;
+
+    @Autowired
+    public MxcController(EmailService emailService) {
+        this.emailService = emailService;
+    }
+    @PostMapping("/api/send-order")
+    public ResponseEntity<?> handleOrder(@RequestParam("productName") String productName,
+                                         @RequestParam("userName") String userName,
+                                         @RequestParam("userName") String userCity,
+                                         @RequestParam("userPhone") String userPhone) {
+        try {
+            emailService.sendOrderEmail(productName, userName, userPhone);
+            // Здесь ваша логика: отправка письма, запись в БД и т.д.
+            System.out.println("Заказ принят: " + productName + " от " + userName);
+
+            // Возвращаем статус 200 OK
+            return ResponseEntity.ok().body(Map.of("status", "success"));
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Ошибка на сервере");
+        }
     }
 }
