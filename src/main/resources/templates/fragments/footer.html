@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" th:href="@{/styles/base.css}" />
+<link rel="stylesheet" th:href="@{/styles/media.css}" />
 <body>
 <footer th:fragment="footer-fragment">
-    <link rel="stylesheet" th:href="@{/styles/base.css}" />
-    <link rel="stylesheet" th:href="@{/styles/media.css}" />
-    <div class="footer-meta">
-        <p>&copy; 2025 All rights reserved</p>
+    <div class="first">
+        <!-- Блок описания (SEO-маяк) -->
+        <div class="footer-description">
+            <p><strong>МХС (Механизированные системы)</strong> — ведущий производитель промышленного оборудования. 
+            Мы проектируем и изготавливаем современные <strong>смешивающие устройства</strong>, 
+            промышленные <strong>миксеры</strong> и <strong>перемешивающие устройства</strong> для различных отраслей промышленности.</p>
+        </div>
     </div>
-    <div class="social-links">
-        <a href="https://vk.ru/mxc21" target="_blank" rel="noopener noreferrer">
-            <img th:src="@{/images/icons/vk.png}" alt="VKontakte" /></a>
-        <a href="https://rutube.ru/channel/8765459/?ysclid=mjpspwtcgr626327927" target="_blank"
-            rel="noopener noreferrer">
-            <img th:src="@{/images/icons/rutube.png}" alt="Rutube" /></a>
-        <a href="https://t.me/mxcstal21" target="_blank" rel="noopener noreferrer">
-            <img th:src="@{/images/icons/telegram.png}" alt="Telegram" /></a>
-    </div>
-    <div class="footer-policy">
-        <p><a href="/privacy-policy.html" class="policy-link">Политика конфиденциальности</a></p>
+    <div class="second">
+        <div class="footer-meta">
+        <small>&copy; 2026 "Механизированные системы" (МХС) All rights reserved</small>
+        </div>
+        <div class="social-links">
+            <a href="https://vk.ru/mxc21" target="_blank" rel="noopener noreferrer">
+                <img th:src="@{/images/icons/vk.png}" alt="Промышленное оборудование МХС — производство и поставка по всей России ВКонтакте" /></a>
+            <a href="https://rutube.ru/channel/8765459/?ysclid=mjpspwtcgr626327927" target="_blank" rel="noopener noreferrer">
+                <img th:src="@{/images/icons/rutube.png}" alt="Промышленное оборудование МХС — производство и поставка по всей России на Rutube" /></a>
+            <a href="https://t.me/mxcstal21" target="_blank" rel="noopener noreferrer">
+                <img th:src="@{/images/icons/telegram.png}" alt="Промышленное оборудование МХС — производство и поставка по всей России в Telegram" /></a>
+        </div>
+        <div class="footer-policy">
+            <p><a href="/privacy-policy.html" class="policy-link">Политика конфиденциальности</a></p>
+        </div>
     </div>
 </footer>
 </body>
