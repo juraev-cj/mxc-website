@@ -13,7 +13,6 @@ main#app-content {
     align-items: flex-start;
     background-color: white;
     padding: 7rem 0rem 7rem 0rem;
-    hyphens: auto; /* Автоматические переносы (нужен атрибут lang="ru" у html) */
 }
 /* Структура секции Home */
 #home .left-section {
@@ -38,7 +37,7 @@ main#app-content {
 #home .home-text h1 {
     font-size: 4rem;
     color: rgb(36, 128, 76);
-    margin-top: 3rem;
+    margin-top: 0.5rem;
     margin-bottom: 2rem;
     line-height: 1;
     text-align: left;

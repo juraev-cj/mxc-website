@@ -140,6 +140,24 @@ main.right-sidebar .slider-viewport .product-card {
 }
 
 /* Здесь начинаются стили для pop-up */
+.pop-up-window::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 10px;
+    border: 1px solid rgb(36, 128, 76);
+    background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d4f598;
+}
 /* 1. Основной фон затемнения */
 .pop-up-overlay {
     display: none; /* Переключается на flex через JS */
@@ -259,6 +277,26 @@ main.right-sidebar .slider-viewport .product-card {
     border-color: #24804c;
 }
 
+#orderForm .privacy-policy {
+    display: flex;          /* Включаем flexbox */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center;     /* Центрируем чекбокс и текст по вертикали друг относительно друга */
+    gap: 10px;              /* Расстояние между галочкой и текстом */
+    text-align: center;      /* На всякий случай для многострочного текста */
+}
+
+/* Чтобы чекбокс не сжимался, если текст длинный */
+#orderForm .privacy-policy input[type="checkbox"] {
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Для удобства нажатия */
+#orderForm .privacy-policy label {
+    cursor: pointer;
+    user-select: none; /* Чтобы текст не выделялся синим при случайном двойном клике */
+}
+
 .order-button {
     background-color: #24804c;
     color: white;
@@ -280,37 +318,6 @@ main.right-sidebar .slider-viewport .product-card {
     margin-top: 10px;
     font-size: 0.9rem;
     text-align: center;
-}
-
-.privacy-policy {
-    margin: 15px 0;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 14px;
-    line-height: 1.2;
-    color: #555;
-}
-
-.privacy-policy input[type="checkbox"] {
-    cursor: pointer;
-    width: 18px;
-    height: 18px;
-    margin-top: 2px;
-}
-
-.privacy-policy label {
-    cursor: pointer;
-    user-select: none;
-}
-
-.privacy-policy a {
-    color: #007bff;
-    text-decoration: underline;
-}
-
-.privacy-policy a:hover {
-    text-decoration: none;
 }
 
 .order-button:disabled {

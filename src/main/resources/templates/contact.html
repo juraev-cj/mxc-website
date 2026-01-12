@@ -44,7 +44,7 @@
                     <ul>
                         <li><strong>Телефон:</strong> <a href="tel:+79379477757">+7(937)947-77-57</a></li>
                         <li><strong>Email:</strong> <a href="mailto:mxcstal.21@mail.ru">mxcstal.21@mail.ru</a></li>
-                        <li><strong>Адрес:</strong> Россия, г. Новочебоксарск, ул. Промышленная, 36</li>
+                        <li><strong>Адрес:</strong> г. Новочебоксарск, ул. Промышленная, 36</li>
                         <li><strong>Местоположение:</strong> <a href="https://yandex.ru/maps/37133/novocheboksarsk/house/promyshlennaya_ulitsa_36/YE4YcwVgTUMCQFtsfX1zcnlnZw==/?ll=47.520433%2C56.123385&z=16.95">Яндекс.Карты</a></li>
                     </ul>
                 </address>
@@ -52,7 +52,6 @@
         </section>
         <section>
             <h3>Форма обратной связи</h3>
-            <p>Если у вас есть вопросы, заполните, пожалуйста, форму ниже, и мы свяжемся с вами в ближайшее время:</p>
 
             <!-- Отправку формы обрабатываем через JavaScript/AJAX, чтобы страница не перезагружалась после отправки! -->
             <form th:action="@{/contact-submit}" method="post" class="section-padded-response">
@@ -62,8 +61,8 @@
                 <label for="city">Город:</label>
                 <input type="text" id="city" name="city" required autocomplete="address-level2">
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required autocomplete="email">
+                <label for="userPhone">Телефон:</label>
+                <input type="tel" id="userPhone" name="userPhone" required autocomplete="tel">
 
                 <label for="message">Сообщение:</label>
                 <textarea id="message" name="message" required autocomplete="off"></textarea>

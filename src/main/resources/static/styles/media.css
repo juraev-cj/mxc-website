@@ -86,7 +86,6 @@
         flex-direction: column;
         gap: 20px;
         padding-top: 6.5rem;
-        hyphens: auto;
     }
 
     #home .left-section, 
@@ -138,7 +137,6 @@
     /* Медиа для pop-up страницы portfolio */
     .pop-up-window {
         padding: 30px 20px;
-        margin: 10px;
     }
 
     .pop-up-grid {
@@ -198,7 +196,6 @@
         flex-direction: column;
         gap: 20px;
         padding-top: 6.5rem;
-        hyphens: auto;
     }
 
     #home .left-section, 

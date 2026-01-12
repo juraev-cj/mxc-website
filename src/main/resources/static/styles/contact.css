@@ -19,7 +19,7 @@
 }
 
 #contact section p {
-    padding: 0rem 2rem;
+    text-indent: 2rem;
 }
 
 /* Стилизация списков и адреса */
@@ -78,6 +78,7 @@
     padding: 30px;
     border-radius: 15px;
     border: 1px solid #eee;
+    margin-top: 1rem;
 }
 
 .section-padded-response input, 
@@ -86,6 +87,26 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     font-family: inherit;
+}
+
+.section-padded-response .privacy-policy {
+    display: flex;          /* Включаем flexbox */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center;     /* Центрируем чекбокс и текст по вертикали друг относительно друга */
+    gap: 10px;              /* Расстояние между галочкой и текстом */
+    text-align: center;      /* На всякий случай для многострочного текста */
+}
+
+/* Чтобы чекбокс не сжимался, если текст длинный */
+.section-padded-response .privacy-policy input[type="checkbox"] {
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* Для удобства нажатия */
+.section-padded-response .privacy-policy label {
+    cursor: pointer;
+    user-select: none; /* Чтобы текст не выделялся синим при случайном двойном клике */
 }
 
 .section-padded-response button {
