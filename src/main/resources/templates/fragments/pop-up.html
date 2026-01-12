@@ -6,7 +6,20 @@
             <span class="close-btn">&times;</span>
             <div class="pop-up-grid">
                 <div class="pop-up-image">
-                    <img id="modal-img" src="" alt="Изображение устройства">
+                    <div class="carousel-container">
+                        <!-- Кнопки навигации -->
+                        <button class="carousel-prev" onclick="changeSlide(-1)">&#10094;</button>
+                        <button class="carousel-next" onclick="changeSlide(1)">&#10095;</button>
+                        
+                        <!-- Сюда JS будет подставлять изображения -->
+                        <div id="carousel-slides" class="carousel-slides">
+                            <img id="modal-img" src="" alt="Изображение устройства">
+                        </div>
+                        
+                        <!-- Индикатор (точки) -->
+                        <div id="carousel-dots" class="carousel-dots"></div>
+                    </div>
+                    <!-- <img id="modal-img" src="" alt="Изображение устройства"> -->
                 </div>
                 <div class="pop-up-info">
                     <h2 id="modal-title"></h2>

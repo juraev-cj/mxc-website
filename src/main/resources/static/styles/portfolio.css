@@ -325,3 +325,65 @@ main.right-sidebar .slider-viewport .product-card {
     cursor: not-allowed;
     background-color: #ccc;
 }
+
+/* Начало блока карусели для поп-апа */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.carousel-slides img {
+    width: 100%;
+    display: none; /* Прячем все фото по умолчанию */
+    object-fit: contain;
+    max-height: 400px;
+}
+
+.carousel-slides img.active {
+    display: block; /* Показываем только активное */
+    animation: fadeIn 0.4s ease-in;
+}
+
+/* Кнопки */
+.carousel-prev, .carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(36, 128, 76, 0.7);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+.carousel-prev:hover, .carousel-next:hover { background: rgb(36, 128, 76); }
+
+/* Точки */
+.carousel-dots {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active { background-color: rgb(36, 128, 76); }
+
+@keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+}
