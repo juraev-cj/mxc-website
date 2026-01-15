@@ -53,6 +53,12 @@ public class MxcController {
         return "thanks";
     }
 
+    @GetMapping("/privacy")
+    public String privacyPolicy(Model model) {
+        model.addAttribute("title", "Политика конфиденциальности | МХС");
+        return "privacy";
+    }
+
     // Этот метод перехватывает прямые запросы на /contact И возвращает базовый index.html, а JS уже загрузит нужный фрагмент.
     @GetMapping({"/contact"})
     public String forwardRoutes() {
