@@ -7,15 +7,17 @@
             <div class="pop-up-grid">
                 <div class="pop-up-image">
                     <div class="carousel-container">
-                        <!-- Кнопки навигации -->
-                        <button class="carousel-prev" onclick="changeSlide(-1)">&#10094;</button>
-                        <button class="carousel-next" onclick="changeSlide(1)">&#10095;</button>
                         
-                        <!-- Сюда JS будет подставлять изображения -->
-                        <div id="carousel-slides" class="carousel-slides">
-                            <img id="modal-img" src="" alt="Изображение устройства">
+                        <div class="carousel-viewport">
+                            <!-- Кнопки теперь будут мерить высоту этого блока -->
+                            <button class="carousel-prev" onclick="changeSlide(-1)">❮</button>
+                            <button class="carousel-next" onclick="changeSlide(1)">❯</button>
+                            
+                            <div id="carousel-slides" class="carousel-slides">
+                                <img id="modal-img" src="" alt="Изображение устройства">
+                            </div>
                         </div>
-                        
+                            
                         <!-- Индикатор (точки) -->
                         <div id="carousel-dots" class="carousel-dots"></div>
                     </div>
@@ -43,6 +45,11 @@
                     <div id="statusMessage"></div>
                 </div>
             </div>
+        </div>
+                <!-- Полноэкранный просмотр фото -->
+        <div id="full-size-viewer" class="full-size-overlay" style="display:none;" onclick="closeFullSize()">
+            <span class="full-size-close">&times;</span>
+            <img id="full-size-img" src="" alt="Full size">
         </div>
     </div>
 </body>

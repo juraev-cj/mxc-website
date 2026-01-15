@@ -142,20 +142,22 @@ main.right-sidebar .slider-viewport .product-card {
 /* Здесь начинаются стили для pop-up */
 .pop-up-window::-webkit-scrollbar {
     width: 0.5rem;
+    border-radius: 3px;
 }
 
-::-webkit-scrollbar-track {
+.pop-up-window::-webkit-scrollbar-track {
     background: white;
+    border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb {
-    background: white;
+.pop-up-window::-webkit-scrollbar-thumb {
+    background: rgb(36, 128, 76);
     border-radius: 10px;
     border: 1px solid rgb(36, 128, 76);
     background-clip: padding-box;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.pop-up-window::-webkit-scrollbar-thumb:hover {
     background: #d4f598;
 }
 /* 1. Основной фон затемнения */
@@ -177,17 +179,15 @@ main.right-sidebar .slider-viewport .product-card {
 
 /* 2. Контейнер окна */
 .pop-up-window {
+    max-width: 80vw;   /* Окно занимает не более 90% ширины экрана */
+    max-height: 90vh;  /* Окно занимает не более 90% высоты экрана */
     background-color: #ffffff;
-    width: 100%;
-    max-width: 900px;
-    max-height: 90dvh;
     border-radius: 24px;
     position: relative;
     padding: 40px;
     position: fixed; /* Окно фиксируется относительно экрана */
     inset: 0;       /* Растягивает область позиционирования на весь экран */
     margin: auto;   /* Центрирует блок по горизонтали и вертикали */
-    height: fit-content;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     overflow-y: auto; /* Прокрутка внутри окна, если контент длинный */
     animation: popUpScale 0.3s ease-out;
@@ -220,18 +220,19 @@ main.right-sidebar .slider-viewport .product-card {
 /* 4. Сетка (Картинка | Инфо) */
 .pop-up-grid {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 40px;
-    align-items: start;
+    grid-template-columns: 1fr 1.4fr; /* Делит окно */
+    gap: 20px;
 }
 
 /* 5. Изображение */
 .pop-up-image img {
-    width: 100%;
     height: auto;
-    border-radius: 16px;
-    object-fit: contain;
-    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 12px;
 }
 
 /* 6. Текстовый блок */
@@ -327,49 +328,68 @@ main.right-sidebar .slider-viewport .product-card {
 }
 
 /* Начало блока карусели для поп-апа */
+/* Контейнер для центровки */
 .carousel-container {
-    position: relative;
     width: 100%;
-    overflow: hidden;
+    text-align: center;
+}
+
+/* Эта обертка станет ровно по размеру картинки */
+.carousel-viewport {
+    position: relative;
+    display: inline-block; /* Схлопывает блок до ширины картинки */
+    vertical-align: top;
+    line-height: 0;        /* Убирает лишний отступ под фото */
     border-radius: 12px;
+    overflow: hidden;      /* Чтобы кнопки обрезались по углам фото */
 }
 
 .carousel-slides img {
-    width: 100%;
-    display: none; /* Прячем все фото по умолчанию */
+    display: none;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 75vh;
+    max-height: 75vh; 
     object-fit: contain;
-    max-height: 400px;
 }
 
 .carousel-slides img.active {
-    display: block; /* Показываем только активное */
-    animation: fadeIn 0.4s ease-in;
+    display: block;
+    border-radius: 12px;
 }
 
-/* Кнопки */
+/* Кнопки теперь будут РОВНО по высоте .carousel-viewport (то есть фото) */
 .carousel-prev, .carousel-next {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(36, 128, 76, 0.7);
+    top: 0;
+    height: 100%;          /* 100% высоты картинки! */
+    width: 7%;            /* Ширина зоны клика */
+    background: transparent;
     color: white;
     border: none;
-    padding: 10px 15px;
     cursor: pointer;
     z-index: 10;
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
     transition: 0.3s;
+    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+    outline: none;
+    border-radius: 12px;
 }
 
-.carousel-prev { left: 10px; }
-.carousel-next { right: 10px; }
+.carousel-prev { left: 0; }
+.carousel-next { right: 0; }
 
-.carousel-prev:hover, .carousel-next:hover { background: rgb(36, 128, 76); }
+.carousel-prev:hover, .carousel-next:hover {
+    background: rgba(36, 128, 76, 0.3); /* Ваш зеленый */
+}
 
-/* Точки */
+/* Точки будут снизу, так как они вне вьюпорта */
 .carousel-dots {
-    text-align: center;
-    padding: 10px;
+    margin-top: 15px;
+    line-height: normal; /* Сбрасываем line-height: 0 */
 }
 
 .dot {
@@ -387,3 +407,44 @@ main.right-sidebar .slider-viewport .product-card {
 @keyframes fadeIn {
     from { opacity: 0; } to { opacity: 1; }
 }
+
+/* Оверлей для полноэкранного фото */
+.full-size-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Темный фон */
+    z-index: 2000; /* Выше основного поп-апа */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+
+/* Само изображение */
+.full-size-overlay img {
+    max-width: 95%;
+    max-height: 95%;
+    object-fit: contain;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Кнопка закрытия */
+.full-size-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Указатель лупы при наведении на картинку в обычном поп-апе */
+.carousel-slides img {
+    cursor: zoom-in;
+}
+
