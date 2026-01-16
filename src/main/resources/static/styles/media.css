@@ -255,6 +255,10 @@
         font-size: 1.2rem;
     }
 
+    #contact ul {
+        text-indent: 0rem;
+    }
+
     .section-padded p {
         margin-left: 10px;
         text-indent: 0;
