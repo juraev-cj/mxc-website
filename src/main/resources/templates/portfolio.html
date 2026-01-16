@@ -221,6 +221,22 @@
             }
         });
     </script>
+    <script>
+        // Блокировка контекстного меню на мобильных устройствах
+        window.oncontextmenu = function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        };
+
+        // Дополнительная защита: предотвращаем долгое нажатие на изображениях
+        document.addEventListener('touchstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                // Мы не делаем preventDefault здесь, чтобы не сломать скролл, 
+                // но CSS-свойство -webkit-touch-callout: none уже защитит фото.
+            }
+        }, {passive: true});
+    </script>
 </body>
 
     <footer>
