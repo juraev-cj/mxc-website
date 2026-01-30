@@ -6,7 +6,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 8rem 2rem 2rem 2rem;
-    background-color: #dbf3afa8;
+    background-color: #bdd4c625;
     hyphens: auto;
     gap: 1rem;
 }
@@ -52,6 +52,14 @@ main.right-sidebar {
     background-color: white;
     padding: 1rem;
     border-radius: 20px;
+}
+
+main.right-sidebar h3 {
+    font-weight: 400;
+    color: #333;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1;
 }
 
 main.right-sidebar a {

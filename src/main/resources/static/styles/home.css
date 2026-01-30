@@ -12,7 +12,7 @@ main#app-content {
     justify-content: space-between;
     align-items: flex-start;
     background-color: white;
-    padding: 7rem 0rem 7rem 0rem;
+    padding: 7rem 0rem 5rem 0rem;
 }
 /* Структура секции Home */
 #home .left-section {

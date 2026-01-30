@@ -66,8 +66,8 @@ img {
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgb(255, 255, 255);
-    z-index: 1000;
+    background-color: #ffffff;
+    z-index: 2000;
     display: flex;
     justify-content: space-between;
     align-items: center;    
@@ -123,7 +123,6 @@ img {
     width: 100%; /* Линия плавно растягивается */
 }
 
-
 /* Гамбургер-меню */
 .hamburger-toggle {
     display: none; 
@@ -134,7 +133,6 @@ img {
     width: 30px;
     height: 21px;
     position: relative;
-    z-index: 100;
 }
 
 .hamburger-toggle .bar {
@@ -145,6 +143,65 @@ img {
     background-color: rgb(36, 128, 76);
     transition: 0.25s;
 }
+
+/* Текст защиты авторских прав */
+#copy-protection-toast {
+    visibility: hidden;
+    min-width: 300px;
+    max-width: 1000px;
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    border-radius: 8px;
+    padding: 0 16px;
+    position: fixed;
+    z-index: 1000;
+    left: 20px;
+    bottom: 30px;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-left: 4px solid #ff4d4d; /* Красная полоска для строгости */
+}
+
+#copy-protection-toast.show {
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 4.5s;
+}
+
+@keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+@keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+
+/* Для левого блока страница portfolio.html */
+/* Скрываем стандартную стрелку */
+details summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Убираем стрелку в Chrome/Safari */
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Добавляем свой символ в конце */
+details summary::after {
+    content: '+';
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Меняем на минус при открытии */
+details[open] summary::after {
+    content: '−';
+}
+
 
 /* Футер */
 [th\:fragment="content"] {
@@ -169,6 +226,18 @@ footer .first {
     text-align: center;
     padding: 0rem 2rem;
 }
+
+footer .first .footer-protection {
+    padding: 15px;
+    border-top: 1px solid #eeeeee;
+    font-size: 12px;
+    color: #888888;
+    line-height: 1.6;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+footer .first .footer-protection p { margin: 0; }
 
 footer .second {
     width: 100%;

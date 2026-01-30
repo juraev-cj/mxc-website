@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <section th:fragment="content" class="reviews-section" data-aos="fade-up" data-aos-duration="1000">
+        <div class="section-title"><h2>Отзывы наших клиентов</h2></div>
+        <div class="container">
+            <div class="reviews-slider">
+                <!-- Этот блок повторится столько раз, сколько отзывов пришло из API -->
+                <div class="review-card" th:each="review : ${avitoReviews}">
+                    <div class="review-header">
+                        <div class="client-photo-placeholder" th:text="${review.authorName != null && !review.authorName.isEmpty() ? #strings.substring(review.authorName,0,1) : 'К'}">А</div>
+                        <div class="client-info">
+                            <span class="client-name" th:text="${review.authorName}">Имя</span>
+                            <span class="client-meta">Заказ с Авито</span>
+                            <span class="client-meta" th:text="${review.date}">2026-01-22</span>
+                        </div>
+                    </div>
+                    <div class="rating">
+                        <!-- Простая логика отображения звезд -->
+                        <span th:each="i : ${#numbers.sequence(1, review.score)}">★</span>
+                    </div>
+                    <p class="review-text" th:text="${review.text}">Текст отзыва...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
