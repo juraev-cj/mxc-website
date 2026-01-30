@@ -7,7 +7,7 @@
         <priority>1.0</priority>
     </url>
 
-    <!-- Страница портфолио (где ваши 34 товара) -->
+    <!-- Страница портфолио c 34 товарами -->
     <url>
         <loc>https://mxc21.ru/portfolio</loc>
         <lastmod>2026-01-30</lastmod>
