@@ -2,7 +2,7 @@
 
 // 1. База данных устройств
 const productDatabase = {
-    "dissol'ver_1": {
+    "dissolver-1": {
         title: "Диссольвер 5.5 кВт",
         price: "185900 руб.",
         images: [
@@ -26,7 +26,7 @@ const productDatabase = {
         `
     },
 
-    "dissol'ver_12": {
+    "dissolver-12": {
         title: "Диссольвер 7.5 кВт",
         price: "289900 руб.",
         images: [
@@ -50,7 +50,7 @@ const productDatabase = {
         `
     },
 
-    "dissol'ver_21": {
+    "dissolver-21": {
         title: "Диссольвер 3 кВт",
         price: "260900 руб.",
         images: [
@@ -74,7 +74,7 @@ const productDatabase = {
         `
     },
 
-    "dissol'ver_22": {
+    "dissolver-22": {
         title: "Диссольвер 4 кВт",
         price: "270900 руб.",
         images: [
@@ -98,7 +98,7 @@ const productDatabase = {
         `
     },
 
-    "dissol'ver_31": {
+    "dissolver-31": {
         title: "Диссольвер 11 кВт",
         price: "318900 руб.",
         images: [
@@ -122,7 +122,7 @@ const productDatabase = {
         `
     },
 
-    "dissol'ver_32": {
+    "dissolver-32": {
         title: "Диссольвер взрывозащищенный 11 кВт",
         price: "495900 руб.",
         images: [
@@ -146,7 +146,7 @@ const productDatabase = {
         `
     },
 
-    "dissol'ver_33": {
+    "dissolver-33": {
         title: "Диссольвер взрывозащищенный 11 кВт",
         price: "495900 руб.",
         images: [
@@ -580,7 +580,7 @@ const productDatabase = {
         `
     },
 
-    "p'yanaya-bochka-1": {
+    "pyanaya-bochka-1": {
         title: "Смеситель типа Пьяная бочка",
         price: "73900 руб.",
         images: [
@@ -605,7 +605,7 @@ const productDatabase = {
         `
     },
 
-    "p'yanaya-bochka-12": {
+    "pyanaya-bochka-12": {
         title: "Смеситель типа Пьяная бочка",
         price: "73900 руб.",
         images: [
@@ -630,7 +630,7 @@ const productDatabase = {
         `
     },
 
-    "p'yanaya-bochka-2": {
+    "pyanaya-bochka-2": {
         title: "Смеситель типа Пьяная бочка",
         price: "97900 руб.",
         images: [
@@ -655,7 +655,7 @@ const productDatabase = {
         `
     },
 
-    "p'yanaya-bochka-3": {
+    "pyanaya-bochka-3": {
         title: "Смеситель типа Пьяная бочка",
         price: "119900 руб.",
         images: [
