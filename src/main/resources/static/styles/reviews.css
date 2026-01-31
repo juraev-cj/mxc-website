@@ -5,6 +5,7 @@
     overflow: hidden;
     border-radius: 15px;
     border: 1px solid #eee;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.05);
 }
 
 .container {
@@ -23,7 +24,7 @@
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory; /* Включаем "примагничивание" */
-    padding: 20px 0 40px 0;
+    padding: 20px 20px 40px 20px;
     -webkit-overflow-scrolling: touch; /* Плавность на iOS */
 }
 

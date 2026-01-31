@@ -79,6 +79,13 @@
                 <button type="submit">Отправить</button>
             </form>
         </section>
+        <script>
+            function copyEmail() {
+            const email = "your-email@example.com";
+            navigator.clipboard.writeText(email);
+            alert("Почта скопирована в буфер обмена!");
+            }
+        </script>
     </div>
         <div th:replace="~{fragments/footer :: footer-fragment}"></div>
     </div>

@@ -52,12 +52,13 @@ main.right-sidebar {
     background-color: white;
     padding: 1rem;
     border-radius: 20px;
+    margin-bottom: 4rem;
 }
 
 main.right-sidebar h3 {
     font-weight: 400;
     color: #333;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     text-align: center;
     line-height: 1;
 }
@@ -126,7 +127,7 @@ main.right-sidebar .slider-viewport .product-card {
 
 #portfolio .right-sidebar .slider-viewport .product-card img {
     margin-top: 0.3rem;
-    border: 1px solid #abb6ca;
+    border: 1px solid #bdd4c65a;
     border-radius: 8px;
     padding: 1rem;
     text-align: center;

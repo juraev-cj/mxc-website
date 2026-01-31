@@ -141,13 +141,24 @@
         text-align: center;
     }
 
+    #portfolio .left-sidebar {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    main.right-sidebar {
+        margin-bottom: 5rem;
+    }
+
     main.right-sidebar .slider-viewport .product-card {
         margin: 0 auto;
     }
 
     /* Медиа для pop-up страницы portfolio */
     .pop-up-window {
-        padding: 30px 20px;
+        max-width: 100vw;
+        max-height: 100vh;
+        margin: auto;
     }
 
     .pop-up-grid {
