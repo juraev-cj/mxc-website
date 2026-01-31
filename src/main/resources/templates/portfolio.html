@@ -44,6 +44,13 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </button>
+        <nav class="main-nav" id="mainMenu">
+            <ul>
+                <!-- Добавляем классы 'nav-link' и атрибуты 'data-path' -->
+                <li><a href="/">Главная</a></li>
+                <li><a href="/contact">Связь</a></li>
+            </ul>
+        </nav>
     </header>
     <!-- ГЛАВНЫЙ ФРАГМЕНТ, который будет загружаться в <main id="app-content"> -->
     <section id="portfolio" class="content" th:fragment="content">
@@ -52,9 +59,9 @@
             <details class="filter-group">
                 <summary>Диссольверы</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="low"> Малая мощность</label>
-                    <label><input type="checkbox" name="type" value="med"> Средняя мощность</label>
-                    <label><input type="checkbox" name="type" value="high"> Высокая мощность</label>
+                    <label><input type="checkbox" name="type" value="dlow"> Малая мощность</label>
+                    <label><input type="checkbox" name="type" value="dmed"> Средняя мощность</label>
+                    <label><input type="checkbox" name="type" value="dhigh"> Высокая мощность</label>
                 </div>
             </details>
             
@@ -72,50 +79,51 @@
             <details class="filter-group">
                 <summary>Гомогенизатор</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="emulgator"> Эмульгатор с высоким усилием сдвига</label>
+                    <label><input type="checkbox" name="type" value="gomed"> Средняя мощность</label>
                 </div>
             </details>
 
             <details class="filter-group">
                 <summary>Резервуар</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="dezha"> Нержавеющая дежа</label>
+                    <label><input type="checkbox" name="type" value="rezlow"> Малая мощность</label>
+                    <label><input type="checkbox" name="type" value="rezmed"> Средняя мощность</label>
+                    <label><input type="checkbox" name="type" value="rezhigh"> Высокая мощность</label>
                 </div>
             </details>
 
             <details class="filter-group">
                 <summary>Пьяная бочка</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="bochka"> Мощность1</label>
-                    <label><input type="checkbox" name="type" value="bochka"> Мощность2</label>
-                    <label><input type="checkbox" name="type" value="bochka"> Мощность2</label>
+                    <label><input type="checkbox" name="type" value="plow"> Малая мощность</label>
+                    <label><input type="checkbox" name="type" value="pmed"> Средняя мощность</label>
+                    <label><input type="checkbox" name="type" value="phigh"> Высокая мощность</label>
                 </div>
             </details>
 
             <details class="filter-group">
                 <summary>Галтовочный барабан</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="baraban"> Мощность1</label>
-                    <label><input type="checkbox" name="type" value="baraban"> Мощность2</label>
-                    <label><input type="checkbox" name="type" value="baraban"> Мощность2</label>
-                    <label><input type="checkbox" name="type" value="baraban"> Мощность2</label>
+                    <label><input type="checkbox" name="type" value="galow"> Малая мощность</label>
+                    <label><input type="checkbox" name="type" value="gamed"> Средняя мощность</label>
+                    <label><input type="checkbox" name="type" value="gahigh"> Высокая мощность</label>
                 </div>
             </details>
 
             <details class="filter-group">
                 <summary>Реактор с мешалкой</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="bochka"> Мощность1</label>
-                    <label><input type="checkbox" name="type" value="bochka"> Мощность2</label>
-                    <label><input type="checkbox" name="type" value="bochka"> Мощность2</label>
+                    <label><input type="checkbox" name="type" value="relow"> Малая мощность</label>
+                    <label><input type="checkbox" name="type" value="remed"> Средняя мощность</label>
+                    <label><input type="checkbox" name="type" value="rehigh"> Высокая мощность</label>
                 </div>
             </details>
 
             <details class="filter-group">
                 <summary>Сварочный стол пластмассовых листов</summary>
                 <div class="filter-content">
-                    <label><input type="checkbox" name="type" value="bochka"> Рабочая зона 1.5 метра</label>
-                    <label><input type="checkbox" name="type" value="bochka"> Рабочая зона 2 метра</label>
+                    <label><input type="checkbox" name="type" value="m1.5"> Рабочая зона 1.5 метра</label>
+                    <label><input type="checkbox" name="type" value="m2.5"> Рабочая зона 2.5 метра</label>
                 </div>
             </details>
         </aside>
@@ -123,31 +131,31 @@
 
         <main class="right-sidebar">
             <div class="slider-viewport">
-                    <div class="product-card" data-type="med" data-product-id="dissolver-1" style="cursor: pointer;">
+                    <div class="product-card" data-type="dmed" data-product-id="dissolver-1" style="cursor: pointer;">
                         <a th:href="@{/dissolvery}"><img th:src="@{/images/dissolvers/middle/kvt5.5/bb50.jpg}" alt="Диссольвер до 50л"></a>
                             <h3>Диссольвер до 50л</h3>
                     </div>
-                    <div class="product-card" data-type="med" data-product-id="dissolver-12" style="cursor: pointer;">
+                    <div class="product-card" data-type="dmed" data-product-id="dissolver-12" style="cursor: pointer;">
                         <a th:href="@{/dissolvery}"><img th:src="@{/images/dissolvers/middle/kvt7.5/aa500.jpg}" alt="Диссольвер до 500л"></a>
                             <h3>Диссольвер до 500л</h3>
                     </div>
-                    <div class="product-card" data-type="low" data-product-id="dissolver-21" style="cursor: pointer;">
+                    <div class="product-card" data-type="dlow" data-product-id="dissolver-21" style="cursor: pointer;">
                         <a th:href="@{/dissolvery}"><img th:src="@{/images/dissolvers/low/kvt3/aa500.jpg}" alt="Диссольвер до 500л"></a>
                             <h3>Диссольвер до 500л</h3>
                     </div>
-                    <div class="product-card" data-type="low" data-product-id="dissolver-22" style="cursor: pointer;">
+                    <div class="product-card" data-type="dlow" data-product-id="dissolver-22" style="cursor: pointer;">
                         <a th:href="@{/dissolvery}"><img th:src="@{/images/dissolvers/low/kvt4/aa500.jpg}" alt="Диссольвер до 500л"></a>
                             <h3>Диссольвер до 500л</h3>
                     </div>
-                    <div class="product-card" data-type="high" data-product-id="dissolver-31" style="cursor: pointer;">
+                    <div class="product-card" data-type="dhigh" data-product-id="dissolver-31" style="cursor: pointer;">
                         <a th:href="@{/dissolvery}"><img th:src="@{/images/dissolvers/high/kvt11/aa500.jpg}" alt="Диссольвер до 500л"></a>
                             <h3>Диссольвер до 500л</h3>
                     </div>
-                    <div class="product-card" data-type="high" data-product-id="dissolver-32" style="cursor: pointer;">
+                    <div class="product-card" data-type="dhigh" data-product-id="dissolver-32" style="cursor: pointer;">
                         <a th:href="@{/dissolvery}"><img th:src="@{/images/dissolvers/high/protection-kvt11/aa500.jpg}" alt="Диссольвер до 500л"></a>
                             <h3>Диссольвер до 500л</h3>
                     </div>
-                    <div class="product-card" data-type="high" data-product-id="dissolver-33" style="cursor: pointer;">
+                    <div class="product-card" data-type="dhigh" data-product-id="dissolver-33" style="cursor: pointer;">
                         <a th:href="@{/dissolvery}"><img th:src="@{/images/dissolvers/high/kvt18.5/aa1500.jpg}" alt="Диссольвер до 1500л"></a>
                             <h3>Диссольвер до 1500л</h3>
                     </div>
@@ -187,67 +195,67 @@
                         <a th:href="@{/miksery}"><img th:src="@{/images/mixer/konus/kvt7.6/aa-konus.jpg}" alt="Миксер конусный"></a>
                             <h3>Миксер конусный</h3>
                     </div>
-                    <div class="product-card" data-type="middle" data-product-id="gomogenizator-1" style="cursor: pointer;">
+                    <div class="product-card" data-type="gomed" data-product-id="gomogenizator-1" style="cursor: pointer;">
                         <a th:href="@{/gomogenizator}"><img th:src="@{/images/homohenizator/kvt7.6/aa-homo.jpg}" alt="Гомогенизатор"></a>
-                            <h3>Эмульгатор</h3>
+                            <h3>Гомогенизатор</h3>
                     </div>
-                    <div class="product-card" data-type="middle" data-product-id="gomogenizator-2" style="cursor: pointer;">
+                    <div class="product-card" data-type="gomed" data-product-id="gomogenizator-2" style="cursor: pointer;">
                         <a th:href="@{/gomogenizator}"><img th:src="@{/images/homohenizator/kvt7.6/aa-homow.jpg}" alt="Гомогенизатор"></a>
                             <h3>Гомогенизатор</h3>
                     </div>
-                    <div class="product-card" data-type="low" data-product-id="rezervuar-1" style="cursor: pointer;">
+                    <div class="product-card" data-type="rezlow" data-product-id="rezervuar-1" style="cursor: pointer;">
                         <a th:href="@{/rezervuar}"><img th:src="@{/images/rezervuar/low/aa250.jpg}" alt="Резервуар"></a>
                             <h3>Резервуар 250л</h3>
                     </div>
-                    <div class="product-card" data-type="low" data-product-id="rezervuar-12" style="cursor: pointer;">
+                    <div class="product-card" data-type="rezlow" data-product-id="rezervuar-12" style="cursor: pointer;">
                         <a th:href="@{/rezervuar}"><img th:src="@{/images/rezervuar/low/aa300.jpg}" alt="Резервуар"></a>
                             <h3>Резервуар 300л</h3>
                     </div>
-                    <div class="product-card" data-type="middle" data-product-id="rezervuar-2" style="cursor: pointer;">
+                    <div class="product-card" data-type="rezmed" data-product-id="rezervuar-2" style="cursor: pointer;">
                         <a th:href="@{/rezervuar}"><img th:src="@{/images/rezervuar/middle/aa400.jpg}" alt="Резервуар"></a>
                             <h3>Резервуар 400л</h3>
                     </div>
-                    <div class="product-card" data-type="high" data-product-id="rezervuar-3" style="cursor: pointer;">
+                    <div class="product-card" data-type="rezhigh" data-product-id="rezervuar-3" style="cursor: pointer;">
                         <a th:href="@{/rezervuar}"><img th:src="@{/images/rezervuar/high/aa1000.jpg}" alt="Резервуар"></a>
                             <h3>Резервуар 1000л</h3>
                     </div>
-                    <div class="product-card" data-type="high" data-product-id="rezervuar-32" style="cursor: pointer;">
+                    <div class="product-card" data-type="rezhigh" data-product-id="rezervuar-32" style="cursor: pointer;">
                         <a th:href="@{/rezervuar}"><img th:src="@{/images/rezervuar/high/aa1000w.jpg}" alt="Резервуар"></a>
                             <h3>Резервуар 1000л</h3>
                     </div>
-                    <div class="product-card" data-type="med" data-product-id="pyanaya-bochka-1" style="cursor: pointer;">
+                    <div class="product-card" data-type="plow" data-product-id="pyanaya-bochka-1" style="cursor: pointer;">
                         <a th:href="@{/pyanaya-bochka}"><img th:src="@{/images/bochka/low/kvt3/aa2030.jpg}" alt="Пьяная бочка"></a>
                             <h3>Пьяная бочка на 20/30л</h3>
                     </div>
-                    <div class="product-card" data-type="high" data-product-id="pyanaya-bochka-2" style="cursor: pointer;">
+                    <div class="product-card" data-type="pmed" data-product-id="pyanaya-bochka-2" style="cursor: pointer;">
                         <a th:href="@{/pyanaya-bochka}"><img th:src="@{/images/bochka/middle/aa4865.jpg}" alt="Пьяная бочка"></a>
                             <h3>Пьяная бочка на 48/65л</h3>
                     </div>
-                    <div class="product-card" data-type="ram" data-product-id="pyanaya-bochka-3" style="cursor: pointer;">
+                    <div class="product-card" data-type="phigh" data-product-id="pyanaya-bochka-3" style="cursor: pointer;">
                         <a th:href="@{/pyanaya-bochka}"><img th:src="@{/images/bochka/high/aa100.jpg}" alt="Пьяная бочка"></a>
                             <h3>Пьяная бочка 100/127л</h3>
                     </div>
-                    <div class="product-card" data-type="ram" data-product-id="galtovochnyy-baraban-1" style="cursor: pointer;">
+                    <div class="product-card" data-type="galow" data-product-id="galtovochnyy-baraban-1" style="cursor: pointer;">
                         <a th:href="@{/galtovochnyy-baraban}"><img th:src="@{/images/baraban/low/aa50.jpg}" alt="Галтовочный барабан"></a>
                             <h3>ГБ на 50л</h3>
                     </div>
-                    <div class="product-card" data-type="ram" data-product-id="galtovochnyy-baraban-2" style="cursor: pointer;">
+                    <div class="product-card" data-type="gamed" data-product-id="galtovochnyy-baraban-2" style="cursor: pointer;">
                         <a th:href="@{/galtovochnyy-baraban}"><img th:src="@{/images/baraban/middle/aa100.jpg}" alt="Галтовочный барабан"></a>
                             <h3>ГБ на 100л</h3>
                     </div>
-                    <div class="product-card" data-type="ram" data-product-id="galtovochnyy-baraban-21" style="cursor: pointer;">
+                    <div class="product-card" data-type="gamed" data-product-id="galtovochnyy-baraban-21" style="cursor: pointer;">
                         <a th:href="@{/galtovochnyy-baraban}"><img th:src="@{/images/baraban/middle/aa200.jpg}" alt="Галтовочный барабан"></a>
                             <h3>ГБ на 200л</h3>
                     </div>
-                    <div class="product-card" data-type="shnek" data-product-id="galtovochnyy-baraban-3" style="cursor: pointer;">
+                    <div class="product-card" data-type="gahigh" data-product-id="galtovochnyy-baraban-3" style="cursor: pointer;">
                         <a th:href="@{/galtovochnyy-baraban}"><img th:src="@{/images/baraban/high/aa300.jpg}" alt="Галтовочный барабан"></a>
                             <h3>ГБ на 300л</h3>
                     </div>
-                    <div class="product-card" data-type="low" data-product-id="reaktor-s-meshalkoy-1" style="cursor: pointer;">
+                    <div class="product-card" data-type="relow" data-product-id="reaktor-s-meshalkoy-1" style="cursor: pointer;">
                         <a th:href="@{/reaktor-s-meshalkoy}"><img th:src="@{/images/reaktor/kvt3/aa-reaktorstac.jpg}" alt="Реактор с мешалкой"></a>
                             <h3>Реактор 3 кВт</h3>
                     </div>
-                    <div class="product-card" data-type="low" data-product-id="reaktor-s-meshalkoy-2" style="cursor: pointer;">
+                    <div class="product-card" data-type="relow" data-product-id="reaktor-s-meshalkoy-2" style="cursor: pointer;">
                         <a th:href="@{/reaktor-s-meshalkoy}"><img th:src="@{/images/reaktor/kvt4/aa-reaktor.jpg}" alt="Реактор с мешалкой"></a>
                             <h3>Реактор 4 кВт</h3>
                     </div>
@@ -263,6 +271,7 @@
         </main>
     </section>
     <div th:replace="~{fragments/pop-up :: pop-up-fragment}"></div>
+    <script th:src="@{/scripts/main.js}"></script>
     <script th:src="@{/scripts/productsConfig.js}"></script>
     <script th:src="@{/scripts/pop-up.js}"></script>
     <script>
