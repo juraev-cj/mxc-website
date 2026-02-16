@@ -19,7 +19,7 @@ public class ContactController {
     @PostMapping("/contact-submit")
     public String submitForm(@RequestParam String name, @RequestParam String email, @RequestParam String message) {
 
-        String subject = "Новая заявка от " + name;
+        String subject = "Новое сообщение от " + name;
         // Передаем данные из формы в метод сервиса
         emailService.sendContactFormEmail(email, subject, message);
 

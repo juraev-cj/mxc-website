@@ -98,7 +98,7 @@ public class MxcController {
                                          @RequestParam("userPhone") String userPhone) {
         try {
             emailService.sendOrderEmail(productName, userName, userPhone);
-            // Здесь ваша логика: отправка письма, запись в БД и т.д.
+            // Здесь логика: отправка письма, запись в БД и т.д.
             System.out.println("Заказ принят: " + productName + " от " + userName);
 
             // Возвращаем статус 200 OK
