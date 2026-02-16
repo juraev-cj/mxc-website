@@ -19,7 +19,7 @@ public class EmailService {
     public void sendContactFormEmail(String fromEmail, String subject, String body) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("juraev.cj@list.ru"); // Email отправителя (который настроен в application.properties)
-        message.setTo("juraev.cj@list.ru"); // !!! АДРЕС ПОЧТЫ, КУДА ДОЛЖНЫ ПРИХОДИТЬ ЗАЯВКИ !!!
+        message.setTo("mxcstal.21@mail.ru"); // !!! АДРЕС ПОЧТЫ, КУДА ДОЛЖНЫ ПРИХОДИТЬ ЗАЯВКИ !!!
         message.setSubject(subject);
         message.setText(body);
         String fullBody = "Отправитель: " + fromEmail + "\n\n" + body;
@@ -32,7 +32,7 @@ public class EmailService {
     public void sendOrderEmail(String productName, String userName, String userPhone) {
         SimpleMailMessage message = new SimpleMailMessage();
         message.setFrom("juraev.cj@list.ru");
-        message.setTo("juraev.cj@list.ru");
+        message.setTo("mxcstal.21@mail.ru");
 
         // Формируем четкую тему письма для менеджера
         message.setSubject("!!! НОВЫЙ ЗАКАЗ: " + productName);
