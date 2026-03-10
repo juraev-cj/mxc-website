@@ -20,7 +20,10 @@ public class MxcController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("index", "Диссольверы, Миксеры, Пьяные бочки купить");
+        model.addAttribute("index", "МХС-Перемешивающее оборудование: Диссольверы, Миксеры, Пьяные бочки купить");
+        model.addAttribute("description", "Продажа перемешивающего оборудования: " +
+                "диссольверы, миксеры и пьяные бочки напрямую от производителя. Высокое качество, " +
+                "гарантия и доставка по РФ. Заказывайте mxc21!");
         return "index";
     }
 
