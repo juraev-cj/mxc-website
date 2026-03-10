@@ -20,7 +20,7 @@ public class MxcController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("index", "mxc21");
+        model.addAttribute("index", "Диссольверы, Миксеры, Пьяные бочки купить");
         return "index";
     }
 
